@@ -1,2 +1,889 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>java课堂笔记笔记</title><script src="https://cdn.bootcss.com/valine/1.4.4/Valine.min.js"></script><link rel="stylesheet" href="/css/arknights.css"><link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/atom-one-dark-reasonable.min.css"><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="笔记" type="application/atom+xml">
-</head><body><header><nav><a href="/">Home</a><a href="/archives">Archives</a></nav></header><main><article><a class="recent-post" href="/2020/06/18/day03/"><div class="recent-info"><span class="categories"><span>NO CATEGORY</span></span><span class="tags"><object><a href="/tags/java/">java</a></object></span><time datetime="2020-06-17T16:26:17.000Z">2020-06-18</time></div><h1 class="recent-title">java课程第三天笔记</h1><div class="recent-excerpt"></div><span class="read-more">READ MORE +</span></a><a class="recent-post" href="/2020/06/18/day02/"><div class="recent-info"><span class="categories"><span>NO CATEGORY</span></span><span class="tags"><object><a href="/tags/java/">java</a></object></span><time datetime="2020-06-17T16:26:16.000Z">2020-06-18</time></div><h1 class="recent-title">java课程第二天笔记</h1><div class="recent-excerpt"></div><span class="read-more">READ MORE +</span></a><a class="recent-post" href="/2020/06/17/day01/"><div class="recent-info"><span class="categories"><span>NO CATEGORY</span></span><span class="tags"><object><a href="/tags/java/">java</a></object></span><time datetime="2020-06-17T15:29:01.000Z">2020-06-17</time></div><h1 class="recent-title">java课程第一天笔记</h1><div class="recent-excerpt"></div><span class="read-more">READ MORE +</span></a><a class="recent-post" href="/2020/06/17/hello-world/"><div class="recent-info"><span class="categories"><span>NO CATEGORY</span></span><span class="tags"><span>empty</span></span><time datetime="2020-06-17T13:39:08.835Z">2020-06-17</time></div><h1 class="recent-title">Hello World</h1><div class="recent-excerpt"></div><span class="read-more">READ MORE +</span></a><div id="paginator"><span class="page-number current">1</span></div></article><aside><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/"> Dr.xiaohei</a></h1><section id="total"><a id="total-archives" href="/archives"><span class="total-title">Archives Total:</span><span class="total-number">4</span></a><div id="total-tags"><span class="total-title">Tags:</span><span class="total-number">1</span></div><div id="total-categories"><span class="total-title">Categories:</span><span class="total-number">0</span></div></section></div><div id="aside-block"></div><footer><nobr><span class="text-title">©</span><span class="text-content">1970 to 2020</span></nobr><wbr><nobr><span class="text-title">ICP</span><span class="text-content">京ICP备18011316号</span></nobr><wbr><wbr><nobr>published with&nbsp;<a href="http://hexo.io" target="_blank" rel="noopener">Hexo&nbsp;</a></nobr><wbr><nobr>Theme&nbsp;<a href="https://github.com/Yue-plus/hexo-theme-arknights" target="_blank" rel="noopener">Arknight&nbsp;</a></nobr><wbr><nobr>by&nbsp;<a href="https://github.com/Yue-plus" target="_blank" rel="noopener">Yue_plus</a></nobr></footer></aside></main><canvas id="canvas-dust"></canvas><script src="/js/arknights.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"blog.fate-seeker.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":false,"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="笔记">
+<meta property="og:type" content="website">
+<meta property="og:title" content="笔记">
+<meta property="og:url" content="https://blog.fate-seeker.com/index.html">
+<meta property="og:site_name" content="笔记">
+<meta property="og:description" content="笔记">
+<meta property="article:author" content="xiaohei">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://blog.fate-seeker.com/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>笔记</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="笔记" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">笔记</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">java课堂笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://blog.fate-seeker.com/2020/06/18/day05/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="xiaohei">
+      <meta itemprop="description" content="笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/18/day05/" class="post-title-link" itemprop="url">java课程第五天笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-18 10:18:17 / 修改时间：10:25:59" itemprop="dateCreated datePublished" datetime="2020-06-18T10:18:17+08:00">2020-06-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="一-方法"><a href="#一-方法" class="headerlink" title="一,方法"></a>一,方法</h2><pre><code>--1,语法
+    方法的修饰符 方法的返回值 方法名([参数列表]){
+        方法体/java代码
+    }
+--2,方法调用</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.method;</span><br><span class="line">&#x2F;&#x2F;测试方法调用</span><br><span class="line">public class Test1_Method &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		System.out.println(1);</span><br><span class="line">		System.out.println(2);</span><br><span class="line">		System.out.println(3);</span><br><span class="line">		</span><br><span class="line">		method();</span><br><span class="line">		</span><br><span class="line">		System.out.println(4);</span><br><span class="line">		System.out.println(5);</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F;创建method():方法的修饰符 方法的返回值 方法名([参数列表])&#123;  &#125;</span><br><span class="line">	public static void method() &#123;</span><br><span class="line">		System.out.println(9);</span><br><span class="line">		System.out.println(8);</span><br><span class="line">		System.out.println(7);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<pre><code>--3,方法参数</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.method;</span><br><span class="line">&#x2F;&#x2F;测试方法传参</span><br><span class="line">public class Test2_Method2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		</span><br><span class="line">		method(5);&#x2F;&#x2F;调用指定的方法</span><br><span class="line">		method2(&quot;jack&quot;);</span><br><span class="line">		method3(5,&quot;jack&quot;);</span><br><span class="line">		method4(10,5);</span><br><span class="line">		</span><br><span class="line">		int m &#x3D; 10 ; </span><br><span class="line">		String n&#x3D;&quot;rose&quot;;</span><br><span class="line">		method5(n,m);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#x2F;&#x2F;5,创建方法时method5(n,m),类型必须匹配,多个参数逗号隔开</span><br><span class="line">	public static void method5(String a,int b) &#123;</span><br><span class="line">		System.out.println(a);</span><br><span class="line">		System.out.println(b);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#x2F;&#x2F;4,创建方法时method4(10,5),类型必须匹配,多个参数逗号隔开</span><br><span class="line">	public static void method4(int a,int b) &#123;</span><br><span class="line">		System.out.println(a);</span><br><span class="line">		System.out.println(b);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#x2F;&#x2F;3,创建方法时method3(5,&quot;jack&quot;),类型必须匹配,多个参数逗号隔开</span><br><span class="line">	public static void method3(int a,String b) &#123;</span><br><span class="line">		System.out.println(a);</span><br><span class="line">		System.out.println(b);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#x2F;&#x2F;2,创建方法时method2(&quot;jack&quot;),匹配传递过来的参数--参数类型 参数名--类型必须匹配</span><br><span class="line">	public static void method2(String b) &#123;</span><br><span class="line">		System.out.println(b);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">&#x2F;&#x2F;1,创建方法时method(5),匹配传递过来的参数--参数类型 参数名--类型必须匹配</span><br><span class="line">	public static void method(int a) &#123;</span><br><span class="line">		System.out.println(a);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<pre><code>--4,方法返回值</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.method;</span><br><span class="line">&#x2F;&#x2F;测试方法返回值</span><br><span class="line">public class Test3_Method3 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;3,接收方法返回来的值,交给sum保存</span><br><span class="line">		int sum &#x3D; function(10);</span><br><span class="line">		System.out.println(sum);</span><br><span class="line">		</span><br><span class="line">		int sum2 &#x3D; function2(5,10);</span><br><span class="line">		System.out.println(sum2);</span><br><span class="line">		</span><br><span class="line">		String sum3 &#x3D; function3(&quot;jack&quot;,10,5);</span><br><span class="line">		System.out.println(sum3);&#x2F;&#x2F;jack105</span><br><span class="line">		</span><br><span class="line">		String sum4 &#x3D; function4(10,5,&quot;jack&quot;);</span><br><span class="line">		System.out.println(sum4);&#x2F;&#x2F;15jack</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F;创建function4(10,5,&quot;jack&quot;)</span><br><span class="line">	public static String function4(int a,int b,String c) &#123;</span><br><span class="line">		&#x2F;&#x2F;5,  +号:数字间做加法运算,只要和字符串+就是拼接字符串</span><br><span class="line">		return	a+b+c;</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F;创建function3(&quot;jack&quot;,10,5)</span><br><span class="line">	public static String function3(String a,int b,int c) &#123;</span><br><span class="line">		&#x2F;&#x2F;4,字符串和什么数据 进行+ 都是在拼串!!!</span><br><span class="line">		return a+b+c;</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F;创建function2(5,10)</span><br><span class="line">	public static int function2(int a,int b) &#123;</span><br><span class="line">		return a+b ; &#x2F;&#x2F;2,通过return关键字把值返回给 sum2保存</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F;1,创建function(10)--需要写明方法返回值的  类型</span><br><span class="line">	public static int function(int x) &#123;</span><br><span class="line">		&#x2F;&#x2F;2,通过return关键字,把方法返回值返回给调用位置</span><br><span class="line">		return x ;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="二-方法重载"><a href="#二-方法重载" class="headerlink" title="二,方法重载"></a>二,方法重载</h2><pre><code>--1,概述
+    在一个类中发生的现象.方法名都一样,但是参数列表不一样(个数或者类型)的现象.
+--2,练习：数字求和</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.method;</span><br><span class="line">&#x2F;&#x2F;测试方法重载overload:在一个类里,都是同名的方法,但是,参数列表不同.</span><br><span class="line">&#x2F;&#x2F;好处:对于程序员而言,需要记忆的方法名很简单.只需要记同一个名字的方法即可</span><br><span class="line">&#x2F;&#x2F;方法的参数可以很灵活的传入.</span><br><span class="line">public class Test4_Overload &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		add(1,2);</span><br><span class="line">		add(1,2,3);</span><br><span class="line">		add(&quot;jack&quot;,1,2);</span><br><span class="line">		add(1,2,&quot;jack&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F;提供重载的add(1,2,&quot;jack&quot;)</span><br><span class="line">	public static void add(int a,int b,String c) &#123;</span><br><span class="line">		&#x2F;&#x2F;第一个+用来做加法运算,第二个+用来拼接字符串</span><br><span class="line">		System.out.println(a+b+c);&#x2F;&#x2F;3jack</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F;提供重载的add(&quot;jack&quot;,1,2)</span><br><span class="line">	public static void add(String a,int b,int c) &#123;</span><br><span class="line">		System.out.println(a+b+c);&#x2F;&#x2F;jack12</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F;提供重载的add(1,2,3)</span><br><span class="line">	public static void add(int a,int b,int c) &#123;</span><br><span class="line">		System.out.println(a+b+c);&#x2F;&#x2F;+加法运算</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F;提供add(1,2)</span><br><span class="line">	public static void add(int a,int b) &#123;</span><br><span class="line">		System.out.println(a+b);&#x2F;&#x2F;+加法运算</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<pre><code>--3,练习：数据的打印</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.method;</span><br><span class="line">&#x2F;&#x2F;测试方法重载overload:在一个类里,都是同名的方法,但是,参数列表不同.</span><br><span class="line">public class Test5_Overload2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		print(10);</span><br><span class="line">		print(2.2);</span><br><span class="line">		print(true);</span><br><span class="line">		print(&quot;jack&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F;提供了重载形式的print()</span><br><span class="line">	public static void print(int a) &#123;</span><br><span class="line">		System.out.println(a);</span><br><span class="line">	&#125;</span><br><span class="line">	public static void print(double a) &#123;</span><br><span class="line">		System.out.println(a);</span><br><span class="line">	&#125;</span><br><span class="line">	public static void print(boolean a) &#123;</span><br><span class="line">		System.out.println(a);</span><br><span class="line">	&#125;</span><br><span class="line">	public static void print(String a) &#123;</span><br><span class="line">		System.out.println(a);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="三-数组"><a href="#三-数组" class="headerlink" title="三,数组"></a>三,数组</h2><pre><code>--1,概念
+    英文名字叫Array,标志是[]
+    作用是用来存储多个  相同类型的  数据.
+--2,特点
+    数组中的每个元素,都有下标,默认从0开始.
+    数组一旦创建，长度不可变.
+--3,创建数组:  数组类型  数组名 = 数组对象;
+    --一般分为动态初始化和静态初始化
+    --动态初始化
+        `int[] a = new int[5];`
+    --静态初始化
+        `int[] b = new int[]{9,8,7,6,5};`
+        `int[] c = {9,8,7,6,5};`
+--4,练习:数组中存入hello</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.array;</span><br><span class="line">&#x2F;&#x2F;测试数组</span><br><span class="line">public class Test6_Array &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;&#x2F;1,静态创建数组</span><br><span class="line">		char[] a &#x3D; new char[]&#123;&#39;h&#39;,&#39;e&#39;,&#39;l&#39;,&#39;l&#39;,&#39;o&#39;&#125;;</span><br><span class="line">		char[] b &#x3D; &#123;&#39;h&#39;,&#39;e&#39;,&#39;l&#39;,&#39;l&#39;,&#39;o&#39;&#125;;</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;2,动态创建数组</span><br><span class="line">		char[] c &#x3D; new char[5];&#x2F;&#x2F;有数据,是默认值\u0000</span><br><span class="line">		c[0] &#x3D; &#39;h&#39; ; &#x2F;&#x2F;修改下标为0的元素</span><br><span class="line">		c[1] &#x3D; &#39;e&#39; ; &#x2F;&#x2F;修改下标为1的元素</span><br><span class="line">		c[2] &#x3D; &#39;l&#39; ; &#x2F;&#x2F;修改下标为2的元素</span><br><span class="line">		c[3] &#x3D; &#39;l&#39; ; &#x2F;&#x2F;修改下标为3的元素</span><br><span class="line">		c[4] &#x3D; &#39;o&#39; ; &#x2F;&#x2F;修改下标为4的元素</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;数组长度才是5,下标是从0开始的,下标最大值也就是4,根本就不存在5下标</span><br><span class="line">&#x2F;&#x2F;数组下标越界:java.lang.ArrayIndexOutOfBoundsException: 5</span><br><span class="line">&#x2F;&#x2F;		System.out.println( c[5] );</span><br><span class="line">		</span><br><span class="line">		System.out.println(a);</span><br><span class="line">		System.out.println(b);</span><br><span class="line">		System.out.println(c);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<pre><code>--5,获取数组的长度:length属性直接获取,例如:a.length
+--6,练习:输出每个月的天数</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.array;</span><br><span class="line">&#x2F;&#x2F;测试数组练习</span><br><span class="line">public class Test7_Array2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;&#x2F;输出每个月的天数</span><br><span class="line">		&#x2F;&#x2F;1,静态  -- 创建数组</span><br><span class="line">		int[] a &#x3D; &#123;31,28,31,30,31,30,31,31,30,31,30,31&#125; ;</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;2,遍历数组&#x2F;循环数组--获取每个元素</span><br><span class="line">		&#x2F;&#x2F;int i &#x3D; 0 ;是指从下标为0的元素开始 ,向后遍历.i代表下标</span><br><span class="line">		&#x2F;&#x2F;i &lt;&#x3D; a.length-1 ;表示下标i可以取到的最大值是  数组长度-1</span><br><span class="line">		&#x2F;&#x2F;i++; 下标的更改方式,从0开始依次递增</span><br><span class="line">		for( int i &#x3D; 0 ; i &lt;&#x3D; a.length-1  ; i++ ) &#123;</span><br><span class="line">			&#x2F;&#x2F;a[i] 是指根据下标i获取a数组中存着的元素  并打印</span><br><span class="line">&#x2F;&#x2F;			System.out.println(&quot;1月有31天&quot;);</span><br><span class="line">			System.out.println(i+1+&quot;月有&quot;+a[i]+&quot;天&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;遍历数组，存入1到10</span><br><span class="line">		&#x2F;&#x2F;1,动态  -- 创建数组</span><br><span class="line">		int[] b &#x3D; new int[10];&#x2F;&#x2F;默认值0</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;2,遍历数组,把默认值改为1-10</span><br><span class="line">		for(int i &#x3D; 0 ; i &lt;&#x3D; b.length-1 ; i++) &#123;	</span><br><span class="line">			b[i] &#x3D; i+1 ; &#x2F;&#x2F;修改每个元素的默认值,改成0-10 </span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;3,查看数组里的元素</span><br><span class="line">		for(int i &#x3D; 0 ; i &lt;&#x3D; b.length-1 ; i++) &#123;</span><br><span class="line">			System.out.println(b[i]);&#x2F;&#x2F;根据下标i获取元素</span><br><span class="line">		&#125;</span><br><span class="line">			</span><br><span class="line">		&#x2F;&#x2F;TODO 创建数组,并存入随机</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://blog.fate-seeker.com/2020/06/18/day04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="xiaohei">
+      <meta itemprop="description" content="笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/18/day04/" class="post-title-link" itemprop="url">java课程第四天笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-18 10:16:17 / 修改时间：10:25:43" itemprop="dateCreated datePublished" datetime="2020-06-18T10:16:17+08:00">2020-06-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="一-嵌套for循环"><a href="#一-嵌套for循环" class="headerlink" title="一,嵌套for循环"></a>一,嵌套for循环</h2><pre><code>--1,语法</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for(开始位置;判断条件;更改条件)&#123;&#x2F;&#x2F;外循环</span><br><span class="line">	循环体</span><br><span class="line">	for(开始位置;判断条件;更改条件)&#123;&#x2F;&#x2F;内循环</span><br><span class="line">		循环体</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>--2,特点
+    --外循环执行1次，内循环执行多次
+    --外循环控制行，内循环控制列
+--3,入门案例</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.fordemo;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;测试嵌套for</span><br><span class="line">public class Test1_For2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;&#x2F;1, 总结:外循环执行1次，内循环执行多次</span><br><span class="line">		&#x2F;&#x2F; 当i&#x3D;1时,输出外循环i的值1,输出内循环j的所有值1 2 3 4 5</span><br><span class="line">		&#x2F;&#x2F; 当i&#x3D;2时,输出外循环i的值2,输出内循环j的所有值1 2 3 4 5</span><br><span class="line">		&#x2F;&#x2F; 当i&#x3D;3时,输出外循环i的值3,输出内循环j的所有值1 2 3 4 5</span><br><span class="line">		for(int i &#x3D; 1 ; i &lt;&#x3D; 3 ; i++ ) &#123;&#x2F;&#x2F; 外循环,执行3次</span><br><span class="line">			System.out.println(i);</span><br><span class="line">			</span><br><span class="line">			for(int j &#x3D; 1 ; j &lt;&#x3D; 5; j++) &#123;&#x2F;&#x2F; 内循环,执行5次</span><br><span class="line">				System.out.println(j);</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;2, 外循环控制行，内循环控制列</span><br><span class="line">		&#x2F;&#x2F;第一轮i&#x3D;1时,内循环:同一行展示*****,回车换行</span><br><span class="line">		&#x2F;&#x2F;第二轮i&#x3D;2时,内循环:同一行展示*****,回车换行</span><br><span class="line">		&#x2F;&#x2F;第三轮i&#x3D;3时,内循环:同一行展示*****,回车换行</span><br><span class="line">		&#x2F;&#x2F;第四轮i&#x3D;4时,内循环:同一行展示*****,回车换行</span><br><span class="line">		&#x2F;&#x2F;第五轮i&#x3D;5时,内循环:同一行展示*****,回车换行</span><br><span class="line">		for(int i &#x3D; 1 ; i &lt; 6 ; i++) &#123; &#x2F;&#x2F; 外循环,执行5次</span><br><span class="line">			for(int j &#x3D; 1 ; j &lt; 6 ; j++) &#123; &#x2F;&#x2F; 内循环,执行5次</span><br><span class="line">				System.out.print(&quot;*&quot;);&#x2F;&#x2F;同行展示</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			System.out.println();&#x2F;&#x2F;换行符</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>--4,练习:打印左直角三角形</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.fordemo;</span><br><span class="line">&#x2F;&#x2F;测试嵌套for</span><br><span class="line">public class Test2_For2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;&#x2F;1,打印左直角三角形</span><br><span class="line">	&#x2F;&#x2F;第一轮,i&#x3D;1时,内循环:j&#x3D;1,j&lt;&#x3D;1;此时,满足条件的j有一次,同一行展示*,回车换行</span><br><span class="line">	&#x2F;&#x2F;第二轮,i&#x3D;2时,内循环:j&#x3D;1,j&lt;&#x3D;2;此时,满足条件的j有两次,同一行展示**,回车换行</span><br><span class="line">	&#x2F;&#x2F;第三轮,i&#x3D;3时,内循环:j&#x3D;1,j&lt;&#x3D;3;此时,满足条件的j有三次,同一行展示***,回车换行</span><br><span class="line">	&#x2F;&#x2F;第四轮,i&#x3D;4时,内循环:j&#x3D;1,j&lt;&#x3D;4;此时,满足条件的j有四次,同一行展示****,回车换行</span><br><span class="line">	&#x2F;&#x2F;第五轮,i&#x3D;5时,内循环:j&#x3D;1,j&lt;&#x3D;5;此时,满足条件的j有五次,同一行展示*****,回车换行</span><br><span class="line">		for(int i &#x3D; 1; i &lt;&#x3D; 5 ; i++) &#123;&#x2F;&#x2F;外循环控制行,执行5次,打印5行</span><br><span class="line">			for(int j &#x3D; 1 ; j &lt;&#x3D; i ; j++) &#123;&#x2F;&#x2F;内循环控制列,但是列数不能写死,要变</span><br><span class="line">				System.out.print(&quot;*&quot;);&#x2F;&#x2F;同行展示*</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();&#x2F;&#x2F;换行</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<pre><code>--5,练习:打印99乘法表</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.fordemo;</span><br><span class="line">&#x2F;&#x2F;测试嵌套for</span><br><span class="line">public class Test2_For2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;&#x2F;1,打印左直角三角形</span><br><span class="line">	&#x2F;&#x2F;第一轮,i&#x3D;1时,内循环:j&#x3D;1,j&lt;&#x3D;1;此时,满足条件的j有一次,同一行展示*,回车换行</span><br><span class="line">	&#x2F;&#x2F;第二轮,i&#x3D;2时,内循环:j&#x3D;1,j&lt;&#x3D;2;此时,满足条件的j有两次,同一行展示**,回车换行</span><br><span class="line">	&#x2F;&#x2F;第三轮,i&#x3D;3时,内循环:j&#x3D;1,j&lt;&#x3D;3;此时,满足条件的j有三次,同一行展示***,回车换行</span><br><span class="line">	&#x2F;&#x2F;第四轮,i&#x3D;4时,内循环:j&#x3D;1,j&lt;&#x3D;4;此时,满足条件的j有四次,同一行展示****,回车换行</span><br><span class="line">	&#x2F;&#x2F;第五轮,i&#x3D;5时,内循环:j&#x3D;1,j&lt;&#x3D;5;此时,满足条件的j有五次,同一行展示*****,回车换行</span><br><span class="line">		for(int i &#x3D; 1; i &lt;&#x3D; 5 ; i++) &#123;&#x2F;&#x2F;外循环控制行,执行5次,打印5行</span><br><span class="line">			for(int j &#x3D; 1 ; j &lt;&#x3D; i ; j++) &#123;&#x2F;&#x2F;内循环控制列,但是列数不能写死,要变</span><br><span class="line">				System.out.print(&quot;*&quot;);&#x2F;&#x2F;同行展示*</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();&#x2F;&#x2F;换行</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F; 打印99乘法表</span><br><span class="line">		for(int i &#x3D; 1; i &lt;&#x3D; 9 ; i++) &#123;&#x2F;&#x2F;外循环控制行,执行5次,打印5行</span><br><span class="line">			for(int j &#x3D; 1 ; j &lt;&#x3D; i ; j++) &#123;&#x2F;&#x2F;内循环控制列,但是列数不能写死,要变</span><br><span class="line">&#x2F;&#x2F;				System.out.print(&quot;5*2&#x3D;10&quot;);&#x2F;&#x2F;同行展示*</span><br><span class="line">&#x2F;&#x2F;				System.out.print(&quot;行*列&#x3D;积&quot;);&#x2F;&#x2F;同行展示*</span><br><span class="line">				System.out.print(i+&quot;*&quot;+j+&quot;&#x3D;&quot;+i*j+&quot;	&quot;);&#x2F;&#x2F;同行展示*</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();&#x2F;&#x2F;换行</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="二-break和continue"><a href="#二-break和continue" class="headerlink" title="二,break和continue"></a>二,break和continue</h2><pre><code>--1,都是用来结束循环
+    --`break`用来立刻结束
+    --`continue`用来结束当前这一次循环还能继续
+--2,练习：找数字88
+    --需求:接收用户输入的100次数字</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.breakdemo;</span><br><span class="line"></span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;测试break</span><br><span class="line">public class Test3_Break &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		</span><br><span class="line">		for (int i &#x3D; 0; i &lt; 100 ; i++) &#123;</span><br><span class="line">			&#x2F;&#x2F;用户输入的数字</span><br><span class="line">			int input &#x3D; new Scanner(System.in).nextInt();</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;判断</span><br><span class="line">			if(input &#x3D;&#x3D; 88) &#123;&#x2F;&#x2F;是88</span><br><span class="line">				System.out.println(&quot;中了&quot;);</span><br><span class="line">				break;&#x2F;&#x2F;1,结束程序,程序立刻结束</span><br><span class="line">				</span><br><span class="line">		&#x2F;&#x2F;3,break 和 continue之后就不要再出现代码了,否则都是不可到达的代码</span><br><span class="line">&#x2F;&#x2F;				System.out.println(123);</span><br><span class="line">			&#125;else if(input !&#x3D; 88) &#123;&#x2F;&#x2F;不是88</span><br><span class="line">				continue;&#x2F;&#x2F;2,继续输入,还能有下次循环的机会</span><br><span class="line">&#x2F;&#x2F;				System.out.println(123);</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="三-循环结构-while–先判断后执行"><a href="#三-循环结构-while–先判断后执行" class="headerlink" title="三,循环结构:while–先判断后执行"></a>三,循环结构:<code>while</code>–先判断后执行</h2><pre><code>--1,语法</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">while(判断条件)&#123;</span><br><span class="line">	循环体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>--2, 练习：猜数字
+    --需求:产生一个随机数，和用户一直在输入的数字比较</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.whiledemo;</span><br><span class="line"></span><br><span class="line">import java.util.Random;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;测试 while</span><br><span class="line">public class Test4_While &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;&#x2F;1,让程序产生随机数 -- 产生n以内的随机数,默认从0开始</span><br><span class="line">		int random &#x3D; new Random().nextInt(100);</span><br><span class="line">		System.out.println(random);</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;	for形式的死循环!! -- 必须设置程序的出口!!</span><br><span class="line">&#x2F;&#x2F;		for(int i &#x3D; 1; i &gt;&#x3D; 1 ; i++) &#123;</span><br><span class="line">&#x2F;&#x2F;		for(;;) &#123;</span><br><span class="line">		&#x2F;&#x2F;死循环!!--必须设置程序的出口!!</span><br><span class="line">&#x2F;&#x2F;		while(true) &#123;&#x2F;&#x2F;条件永远成立,一直接收,根本不停</span><br><span class="line">		while(random&gt;50) &#123;&#x2F;&#x2F;先判断再执行的循环结构</span><br><span class="line">			&#x2F;&#x2F;2,让用户一直输入</span><br><span class="line">			int input &#x3D; new Scanner(System.in).nextInt();</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;3,一直比较</span><br><span class="line">			if(input &gt; random) &#123;</span><br><span class="line">				System.out.println(&quot;大了&quot;);</span><br><span class="line">			&#125;else if(input &lt; random) &#123;</span><br><span class="line">				System.out.println(&quot;小了&quot;);</span><br><span class="line">			&#125;else if(input &#x3D;&#x3D; random) &#123;</span><br><span class="line">				System.out.println(&quot;中了&quot;);</span><br><span class="line">				break ;&#x2F;&#x2F;死循环的出口!!</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="四-循环结构-do…while–先执行后判断"><a href="#四-循环结构-do…while–先执行后判断" class="headerlink" title="四,循环结构:do…while–先执行后判断"></a>四,循环结构:do…while–先执行后判断</h2><pre><code>--1,语法</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">do&#123;</span><br><span class="line">	循环体</span><br><span class="line">&#125;while(判断条件);</span><br></pre></td></tr></table></figure>
+<pre><code>--2,改造猜数字</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.whiledemo;</span><br><span class="line"></span><br><span class="line">import java.util.Random;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;测试 while</span><br><span class="line">public class Test4_While &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;&#x2F;1,让程序产生随机数 -- 产生n以内的随机数,默认从0开始</span><br><span class="line">		int random &#x3D; new Random().nextInt(100);</span><br><span class="line">		System.out.println(random);</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;	for形式的死循环!! -- 必须设置程序的出口!!</span><br><span class="line">&#x2F;&#x2F;		for(int i &#x3D; 1; i &gt;&#x3D; 1 ; i++) &#123;</span><br><span class="line">&#x2F;&#x2F;		for(;;) &#123;</span><br><span class="line">		&#x2F;&#x2F;死循环!!--必须设置程序的出口!!</span><br><span class="line">&#x2F;&#x2F;		while(true) &#123;&#x2F;&#x2F;条件永远成立,一直接收,根本不停</span><br><span class="line">		do &#123;&#x2F;&#x2F;先判断再执行的循环结构</span><br><span class="line">			&#x2F;&#x2F;2,让用户一直输入</span><br><span class="line">			int input &#x3D; new Scanner(System.in).nextInt();</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;3,一直比较</span><br><span class="line">			if(input &gt; random) &#123;</span><br><span class="line">				System.out.println(&quot;大了&quot;);</span><br><span class="line">			&#125;else if(input &lt; random) &#123;</span><br><span class="line">				System.out.println(&quot;小了&quot;);</span><br><span class="line">			&#125;else if(input &#x3D;&#x3D; random) &#123;</span><br><span class="line">				System.out.println(&quot;中了&quot;);</span><br><span class="line">				break ;&#x2F;&#x2F;死循环的出口!!</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;while(random&gt;50);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="五-总结三种循环的异同-–可以互相替换"><a href="#五-总结三种循环的异同-–可以互相替换" class="headerlink" title="五,总结三种循环的异同:–可以互相替换"></a>五,总结三种循环的异同:–可以互相替换</h2><pre><code>--相同点:都是为了解决程序中,需要重复的做相同的事情的需求
+--不同点:
+    --`for`:知道循环的开始位置,知道循环的次数
+        `for`(开始位置;循环条件;更条件){循环体}
+    --`while`:可以不知道开始位置,可以不知道数据的规律
+        `while(循环条件){循环体}`
+    --`do...while`:可以不知道开始位置,可以不知道数据的规律
+                 可以保证循环体最少执行1次.
+        `do...while(循环条件){循环体}`</code></pre><h2 id="六-练习"><a href="#六-练习" class="headerlink" title="六,练习:"></a>六,练习:</h2><pre><code>--求【0,100】中，奇数的个数
+--求【0,100】中，偶数的和
+--代码</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.fordemo;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;测试for循环练习</span><br><span class="line">public class Test5 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">&#x2F;&#x2F;		--求【1,100】中，偶数的和</span><br><span class="line">		int sum &#x3D; 0 ;&#x2F;&#x2F;定义变量,用来存和</span><br><span class="line">		for (int i &#x3D; 1; i &lt;&#x3D; 100; i++) &#123;</span><br><span class="line">			&#x2F;&#x2F;判断,i是偶数吗</span><br><span class="line">			if(i % 2 &#x3D;&#x3D; 0) &#123;&#x2F;&#x2F;偶数</span><br><span class="line">				sum &#x3D; sum + i ;&#x2F;&#x2F;修改sum的值</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;100以内的偶数和是:&quot;+sum);</span><br><span class="line">		</span><br><span class="line">&#x2F;&#x2F;		--求【1,100】中，奇数的个数</span><br><span class="line">		int count &#x3D; 0 ;&#x2F;&#x2F;定义变量,用来存个数</span><br><span class="line">		for (int i &#x3D; 1; i &lt;&#x3D; 100; i++) &#123;</span><br><span class="line">			&#x2F;&#x2F;判断,i是奇数吗</span><br><span class="line">			if(i % 2 &#x3D;&#x3D; 1) &#123;&#x2F;&#x2F;奇数</span><br><span class="line">				count++;&#x2F;&#x2F;统计每个奇数的个数</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;100以内的奇数个数是:&quot;+count);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="七-变量"><a href="#七-变量" class="headerlink" title="七,变量:"></a>七,变量:</h2><pre><code>--1,变量的使用原则：就近原则。
+--2,变量出现的位置不同,名字和作用都不同.
+    出现在成员位置(类里方法外)的变量叫成员变量.
+    出现在局部位置(方法里)的变量叫局部变量.
+--3,局部变量:在方法里+必须手动初始化+作用范围就是在方法里+方    法运行完毕局部变量将释放内存
+--4,成员变量:在类里方法外+有默认值不用手动初始化+作用范围就是整个类    里+类消失成员变量才释放内存
+--5,测试</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.variable;</span><br><span class="line"></span><br><span class="line">import org.junit.Test;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;测试 变量的使用</span><br><span class="line">public class Test6_Variable &#123;</span><br><span class="line">	&#x2F;&#x2F;TODO 测试其他类型 的默认值</span><br><span class="line">	</span><br><span class="line">	&#x2F;&#x2F;2,成员变量:位置是在类里方法外  +  有默认值 + 作用范围是整个类里</span><br><span class="line">	double count ;</span><br><span class="line">	</span><br><span class="line">	&#x2F;&#x2F;3,就近原则---前提是---当成员变量 和 局部变量同名时,你使用的一定是局部变量</span><br><span class="line">	int sum &#x3D; 20 ;</span><br><span class="line">	</span><br><span class="line">	&#x2F;&#x2F;单元测试junit :要求方法要有标志@Test + 方法必须是public的 + 方法返回值是void</span><br><span class="line">	@Test</span><br><span class="line">	public void show() &#123;</span><br><span class="line">		&#x2F;&#x2F;1,局部变量:位置是在方法里 + 必须初始化  + 作用范围是方法里</span><br><span class="line">		int sum &#x3D; 10;</span><br><span class="line">		System.out.println(sum);&#x2F;&#x2F;10,就近原则</span><br><span class="line">		System.out.println(count);&#x2F;&#x2F;0.0</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://blog.fate-seeker.com/2020/06/18/day03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="xiaohei">
+      <meta itemprop="description" content="笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/18/day03/" class="post-title-link" itemprop="url">java课程第三天笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-18 00:26:17 / 修改时间：10:10:23" itemprop="dateCreated datePublished" datetime="2020-06-18T00:26:17+08:00">2020-06-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>一,运算符<br>    –1,算数运算符: +-*/ ++ – %(模)<br>    –2,比较运算符(结果是boolean类型):== !=<br>    –3,逻辑运算符(结果是boolean类型):+ !(取反) &amp; |<br>    –4,三元运算符: 1 ? 2 : 3<br>            –结果是2或者是3,到底是2还是3要看1的结果了,1如果描述的成立,结果是2.1如果描述不成立,结果是3.<br>    –5,赋值运算符: = += -= *= /=<br>    –6,逻辑运算符 &amp; |<br>        –逻辑&amp;:表示并且关系<br>            1 &amp; 2 :如果最终运算的结果,想要是true,要求1和2,必须都是true<br>        –短路与/双与&amp;&amp;:表示并且关系 – 高效<br>            1 &amp;&amp; 2 :<br>                2的位置可能会发生短路,当1的位置判断完得到false时,结果就已经注定了是false,此时2可以不参与运算(发生短路).可以提高效率.</p>
+<pre><code>    --逻辑|:表示或者关系
+        1 | 2 :如果最终运算的结果,想要是true,要求1和2中,有一个true就行
+    --短路或/双或||:表示或者关系  -- 高效    
+        1 || 2 :
+            2的位置可能会发生短路,当1的位置判断完得到true时,结果早都注定了是true,此时2可以不参与运算(发生短路).用来提高效率.
+--7,练习：自增自减</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.basic;</span><br><span class="line">&#x2F;&#x2F;这个类用来测试 自增++   自减--</span><br><span class="line">public class Test1_ZIzeng &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		int a &#x3D; 1;</span><br><span class="line">		&#x2F;&#x2F;符号在后,先使用再变化</span><br><span class="line">		System.out.println(a++);&#x2F;&#x2F;1</span><br><span class="line">		</span><br><span class="line">		int b &#x3D; 1;</span><br><span class="line">		&#x2F;&#x2F;符号在前,先变化再使用</span><br><span class="line">		System.out.println(++b);&#x2F;&#x2F;2</span><br><span class="line">		</span><br><span class="line">		System.out.println(++b+b+a++);&#x2F;&#x2F;3+3+2&#x3D;8</span><br><span class="line">		</span><br><span class="line">		int c &#x3D; 1;</span><br><span class="line">		&#x2F;&#x2F;符号在后,先使用再变化</span><br><span class="line">		System.out.println(c--);&#x2F;&#x2F;1</span><br><span class="line">		</span><br><span class="line">		int d &#x3D; 1;</span><br><span class="line">		&#x2F;&#x2F;符号在前,先变化再使用</span><br><span class="line">		System.out.println(--d);&#x2F;&#x2F;0</span><br><span class="line">		</span><br><span class="line">		System.out.println(--c-c-d--);&#x2F;&#x2F;-1-(-1)-0&#x3D;0</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<pre><code>--8,练习：求两个数里的大值    </code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">	package cn.tedu.basic;</span><br><span class="line"></span><br><span class="line">	import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">	&#x2F;&#x2F;这个类用来测试 三元运算符</span><br><span class="line">	public class Test2_MaxValue &#123;</span><br><span class="line">		public static void main(String[] args) &#123;</span><br><span class="line">			int a &#x3D; new Scanner(System.in).nextInt();</span><br><span class="line">			int b &#x3D; new Scanner(System.in).nextInt();</span><br><span class="line"></span><br><span class="line">			&#x2F;&#x2F; 两个数里的大值:max记录的值可能是a也可能是b,到底是a还是b呢?--要看a&gt;b判断成立不</span><br><span class="line">			int max &#x3D; a &gt; b ? a : b;</span><br><span class="line">			System.out.println(&quot;a b里的大值是:&quot; + max);</span><br><span class="line"></span><br><span class="line">			&#x2F;&#x2F; 三个数里的大值:</span><br><span class="line">			int c &#x3D; new Scanner(System.in).nextInt();</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;res记录着max和c里的大值</span><br><span class="line">			int res &#x3D; max  &gt; c ? max : c ;</span><br><span class="line">			System.out.println(&quot;a b c里的大值是:&quot;+res);</span><br><span class="line">			</span><br><span class="line">			&#x2F;&#x2F;TODO 优化:一步到位</span><br><span class="line">	&#x2F;&#x2F;		int res &#x3D; a &gt; b ? 2 : 3 ;</span><br><span class="line">	&#x2F;&#x2F;		int res &#x3D; a &gt; b ? a大 : b大 ;</span><br><span class="line">			int res &#x3D; a &gt; b ? ( a &gt; c ? a : c ) : ( b &gt; c ? b : c ) ;</span><br><span class="line">			System.out.println(&quot;a b c里的大值是:&quot;+res);</span><br><span class="line">	</span><br><span class="line">				</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">--9,练习：平年闰年	</span><br><span class="line">	--需求:1、能被4整除，并且不能被100整除</span><br><span class="line">			2、或者能被400整除</span><br><span class="line">		</span><br><span class="line">	package cn.tedu.basic;</span><br><span class="line">	import java.util.Scanner;</span><br><span class="line">	&#x2F;&#x2F;这个类用来测试 平年闰年</span><br><span class="line">	public class Test3_Runnian &#123;</span><br><span class="line">		public static void main(String[] args) &#123;</span><br><span class="line">			&#x2F;&#x2F;1,接收键盘输入的年号</span><br><span class="line">			int year &#x3D; new Scanner(System.in).nextInt();</span><br><span class="line">			</span><br><span class="line">			String desc &#x3D; &quot;平年&quot;;&#x2F;&#x2F;设置默认值</span><br><span class="line">			&#x2F;&#x2F;2,判断   : if(判断条件)&#123;满足条件的代码&#125;</span><br><span class="line">			&#x2F;&#x2F;条件1、能被4整除，并且不能被100整除    ||    条件2、能被400整除</span><br><span class="line">			&#x2F;&#x2F;能被4整除    &amp;&amp;    不能被100整除    ||   能被400整除</span><br><span class="line">			&#x2F;&#x2F;if(判断条件)&#123;满足条件的代码&#125;</span><br><span class="line">			&#x2F;&#x2F;if(能被4整除    &amp;&amp;  不能被100整除    ||  能被400整除)&#123;满足条件的代码&#125;</span><br><span class="line">			if( year % 4 &#x3D;&#x3D; 0 &amp;&amp; year % 100 !&#x3D; 0 || year % 400 &#x3D;&#x3D; 0 )&#123;</span><br><span class="line">				desc &#x3D; &quot;闰年&quot;;&#x2F;&#x2F;修改desc的值是闰年</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">	&#x2F;&#x2F;		System.out.println(&quot;2020年是闰年&quot;);</span><br><span class="line">			System.out.println(year+&quot;年是&quot;+desc);</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p>二,!!!分支结构：if<br>    –1,概述<br>        分支结构是相对于顺序结构而言的.顺序结构只能一行一行顺序的从上往下执行.但是无法完成先判断再执行的需求.<br>    –2,语法<br>        单分支:<br>        if(判断条件){<br>            满足了条件代码<br>        }<br>        多分支:<br>        if(判断条件){<br>            满足了条件代码<br>        }else{<br>            不满足了条件代码<br>        }<br>        嵌套分支:<br>        if(判断条件1){<br>            满足了条件代码1<br>        }else if(判断条件2){<br>            满足了条件代码2<br>        }else if(判断条件3){<br>            满足了条件代码3<br>        }else{<br>            上面的谁都不满足才要执行的代码4<br>        }<br>    –3,练习:商品打折<br>        –版本1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.ifdemo;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line">&#x2F;&#x2F;这个类用来测试 if</span><br><span class="line">public class Test4_IF &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;&#x2F;1,接收用户输入的原价</span><br><span class="line">		double price &#x3D; new Scanner(System.in).nextDouble();</span><br><span class="line">		</span><br><span class="line">		double discount &#x3D; price;&#x2F;&#x2F;定义变量,记录折后价</span><br><span class="line">		&#x2F;&#x2F;2,开始计算折后价,并输出</span><br><span class="line">		if(price &gt;&#x3D; 5000) &#123;&#x2F;&#x2F;满5000打5折</span><br><span class="line">			discount &#x3D; price * 0.5 ;</span><br><span class="line">		&#125;else if(price &gt;&#x3D; 2000) &#123;&#x2F;&#x2F;满2000打8折</span><br><span class="line">			discount &#x3D; price * 0.8 ;</span><br><span class="line">		&#125;else if(price &gt;&#x3D; 1000) &#123;&#x2F;&#x2F;满1000打9折</span><br><span class="line">			discount &#x3D; price * 0.9 ;</span><br><span class="line">		&#125;</span><br><span class="line">		&#x2F;&#x2F;3,输出</span><br><span class="line">		System.out.println(&quot;原价是:&quot;+price+&quot;,折后价是:&quot;+discount);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>--版本2:</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.ifdemo;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line">&#x2F;&#x2F;这个类用来测试 if</span><br><span class="line">public class Test4_IF &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;&#x2F;1,接收用户输入的原价</span><br><span class="line">		double price &#x3D; new Scanner(System.in).nextDouble();</span><br><span class="line">		</span><br><span class="line">&#x2F;&#x2F;		double discount &#x3D; price;&#x2F;&#x2F;定义变量,记录折后价</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;2,开始计算折后价,并输出</span><br><span class="line">		if(price &gt;&#x3D; 5000) &#123;&#x2F;&#x2F;满5000打5折</span><br><span class="line">&#x2F;&#x2F;			price &#x3D; price * 0.5 ;</span><br><span class="line">			</span><br><span class="line">			price *&#x3D; 0.5 ;&#x2F;&#x2F;等效于:price&#x3D;price*0.5;相当于是一种简写形式.</span><br><span class="line">			</span><br><span class="line">		&#125;else if(price &gt;&#x3D; 2000) &#123;&#x2F;&#x2F;满2000打8折</span><br><span class="line">&#x2F;&#x2F;			price &#x3D; price * 0.8 ;</span><br><span class="line">			price *&#x3D; 0.8 ;</span><br><span class="line">		&#125;else if(price &gt;&#x3D; 1000) &#123;&#x2F;&#x2F;满1000打9折</span><br><span class="line">&#x2F;&#x2F;			price &#x3D; price * 0.9 ;</span><br><span class="line">			price *&#x3D; 0.9 ;</span><br><span class="line">		&#125;</span><br><span class="line">		&#x2F;&#x2F;3,输出</span><br><span class="line">&#x2F;&#x2F;		System.out.println(&quot;原价是:&quot;+price+&quot;,折后价是:&quot;+discount);</span><br><span class="line">		System.out.println(&quot;折后价是:&quot;+price);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>--4,练习:统计学员得分</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.ifdemo;</span><br><span class="line"></span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;这个类用来测试 if</span><br><span class="line">public class Test5_If2 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;&#x2F; 1,接收用户输入的分数</span><br><span class="line">		int score &#x3D; new Scanner(System.in).nextInt();</span><br><span class="line"></span><br><span class="line">		&#x2F;&#x2F; 为了增强程序的健壮性.设置上限100和下限0</span><br><span class="line">		if (score &gt; 100 || score &lt; 0) &#123;</span><br><span class="line">			System.out.println(&quot;请您输入有效的分数!&quot;);</span><br><span class="line">			return;&#x2F;&#x2F; 结束程序</span><br><span class="line">		&#125;</span><br><span class="line">		&#x2F;&#x2F; 2,判断</span><br><span class="line">		if (score &gt;&#x3D; 90) &#123;&#x2F;&#x2F; 90分以上 优秀</span><br><span class="line">			System.out.println(&quot;优秀&quot;);</span><br><span class="line">		&#125; else if (score &gt;&#x3D; 80 &amp;&amp; score &lt;&#x3D; 89) &#123;&#x2F;&#x2F; 80~89 良好</span><br><span class="line">			System.out.println(&quot;良好&quot;);</span><br><span class="line">		&#125; else if (score &gt;&#x3D; 70 &amp;&amp; score &lt;&#x3D; 79) &#123;&#x2F;&#x2F; 70~79 中等</span><br><span class="line">			System.out.println(&quot;中等&quot;);</span><br><span class="line">		&#125; else if (score &gt;&#x3D; 60 &amp;&amp; score &lt;&#x3D; 69) &#123;&#x2F;&#x2F; 60~69 及格</span><br><span class="line">			System.out.println(&quot;及格&quot;);</span><br><span class="line">		&#125; else if (score &lt; 60) &#123;&#x2F;&#x2F; 60分以下 不及格</span><br><span class="line">			System.out.println(&quot;不及格&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>三,分支结构：switch<br>    –1,概述<br>        也可以完成先判断再执行的需求.<br>    –2,语法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">switch(判断条件)&#123;</span><br><span class="line">	case 0 : syso(0) ;	break;</span><br><span class="line">	case 1 : syso(1) ;	</span><br><span class="line">	case &#39;x&#39; : syso(2) ;	</span><br><span class="line">	case &quot;java&quot; : syso(3) ; </span><br><span class="line"></span><br><span class="line">	default:syso(100) ;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>--3,练习:</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.ifdemo;</span><br><span class="line">&#x2F;&#x2F;这个类用来测试  switch</span><br><span class="line">public class Test6_Switch &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		</span><br><span class="line">		int sum  &#x3D; 2 ;</span><br><span class="line">		&#x2F;&#x2F;1,判断条件:可以转化为int类型的表达式.</span><br><span class="line">		&#x2F;&#x2F;可以是byte short char int类型.jdk7以后,支持String类型.</span><br><span class="line">		switch(sum) &#123;</span><br><span class="line">			case 1 : System.out.println(1);</span><br><span class="line">			&#x2F;&#x2F;2,自从成功匹配了case后,会继续向后穿透所有case包括default</span><br><span class="line">			case 2 : System.out.println(2);break ;&#x2F;&#x2F;3,立刻结束</span><br><span class="line">			case &#39;2&#39; : System.out.println(&#39;2&#39;);break ;</span><br><span class="line">			case &#39;x&#39; : System.out.println(&#39;x&#39;);break ;</span><br><span class="line">			case 100 : System.out.println(100);break ;</span><br><span class="line">			</span><br><span class="line">			default :System.out.println(666);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>四,循环结构：<code>for</code><br>    –1,概述<br>        是指在程序中,需要重复执行很多次的某些功能.<br>    –2,语法<br>        for(循环的开始位置;循环的判断条件;循环的更改条件){循环体}<br>    –3,练习：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.fordemo;</span><br><span class="line">&#x2F;&#x2F;这个类用来测试 for循环</span><br><span class="line">public class Test7_For &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;&#x2F;int i &#x3D; 0 循环的开始位置</span><br><span class="line">		&#x2F;&#x2F;i &lt;&#x3D; 10 循环的判断条件</span><br><span class="line">		&#x2F;&#x2F;i++ 循环的更改条件,使i不断自增</span><br><span class="line">		&#x2F;&#x2F;i 就表示每次获取到的数据</span><br><span class="line">		for(int i &#x3D; 0; i &lt;&#x3D; 10 ; i++ )&#123;&#x2F;&#x2F;练习：打印0到10</span><br><span class="line">			System.out.println(i);&#x2F;&#x2F;打印当前i的值</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;练习：打印10到0</span><br><span class="line">		for(int i &#x3D; 10 ; i &gt;&#x3D; 0  ; i-- ) &#123;</span><br><span class="line">			System.out.println(i);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;TODO 打印8,88,888,8888</span><br><span class="line">		&#x2F;&#x2F;TODO 画流程图!!</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>[练习] 求【0,100】中，奇数的个数<br>[练习] 求【0,100】中，偶数的和    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">package com.seeker.exercise;</span><br><span class="line"></span><br><span class="line">import org.junit.Test;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;1-100偶数和</span><br><span class="line">public class For &#123;</span><br><span class="line">	@Test</span><br><span class="line">	public void Oshuhe() &#123;</span><br><span class="line">		int sum &#x3D; 0;</span><br><span class="line">		for (int i &#x3D; 1; i &lt;&#x3D;100; i++) &#123;</span><br><span class="line">			if (i%2&#x3D;&#x3D;0) &#123;</span><br><span class="line">				sum+&#x3D;i;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;1-100的偶数和是&quot; +sum);</span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;&#x2F;1-100奇数个数</span><br><span class="line">	@Test</span><br><span class="line">	public void Jshuge() &#123;</span><br><span class="line">		int i&#x3D;0;</span><br><span class="line">		for (int j &#x3D; 1; j &lt;&#x3D;100; j++) &#123;</span><br><span class="line">			if (j%2!&#x3D;0) &#123;</span><br><span class="line">				++i;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;100以内的奇数个数为&quot; +i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://blog.fate-seeker.com/2020/06/18/day02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="xiaohei">
+      <meta itemprop="description" content="笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/18/day02/" class="post-title-link" itemprop="url">java课程第二天笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-18 00:26:16 / 修改时间：10:25:21" itemprop="dateCreated datePublished" datetime="2020-06-18T00:26:16+08:00">2020-06-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="一-数据类型"><a href="#一-数据类型" class="headerlink" title="一,数据类型"></a>一,数据类型</h2><pre><code>--1,基本类型 八种
+    --整数:`byte` `short` `int` `long`
+    --小数:`float` `double`
+    --布尔:`boolean`
+    --字符:`char`  
+--2,练习:最大值最小值</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.basic;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;这个类用来测试  取值范围</span><br><span class="line">&#x2F;&#x2F;总结:</span><br><span class="line">&#x2F;&#x2F;1,变量定义的三要素: 变量类型  变量名 &#x3D; 变量值</span><br><span class="line">&#x2F;&#x2F;2,基本类型对应的工具类:</span><br><span class="line">&#x2F;&#x2F;基本类型: byte short int     long float double char      boolean</span><br><span class="line">&#x2F;&#x2F;工具类:  Byte Short Integer Long  Float Double Character Boolean</span><br><span class="line">&#x2F;&#x2F;3,通过点.来调用工具类的功能</span><br><span class="line">&#x2F;&#x2F;4,打印变量时,千万不要用双引号</span><br><span class="line">public class Test1_Scope &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;&#x2F;1,整数类型的取值范围 byte short int long</span><br><span class="line">		&#x2F;&#x2F;创建变量,记录最大值:变量类型  变量名 变量值</span><br><span class="line">		byte max &#x3D; Byte.MAX_VALUE ;</span><br><span class="line">&#x2F;&#x2F;		System.out.println(&quot;max&quot;);&#x2F;&#x2F;指定了打印固定的数据--max这个单词!!!</span><br><span class="line">		System.out.println(max);&#x2F;&#x2F;127,打印max变量的值</span><br><span class="line">		&#x2F;&#x2F;创建变量,记录最小值</span><br><span class="line">		byte min &#x3D; Byte.MIN_VALUE ;</span><br><span class="line">		System.out.println(min);&#x2F;&#x2F;-128,打印min变量的值</span><br><span class="line">		</span><br><span class="line">		short max2 &#x3D; Short.MAX_VALUE ;</span><br><span class="line">		short min2 &#x3D; Short.MIN_VALUE ;</span><br><span class="line">		System.out.println(max2);&#x2F;&#x2F;32767</span><br><span class="line">		System.out.println(min2);&#x2F;&#x2F;-32768</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;int--Integer long--Long  </span><br><span class="line">		int max3 &#x3D; Integer.MAX_VALUE ;</span><br><span class="line">		int min3 &#x3D; Integer.MIN_VALUE ;</span><br><span class="line">		System.out.println(max3);&#x2F;&#x2F;2147483647</span><br><span class="line">		System.out.println(min3);&#x2F;&#x2F;-2147483648</span><br><span class="line">		</span><br><span class="line">		long max4 &#x3D; Long.MAX_VALUE ;</span><br><span class="line">		long min4 &#x3D; Long.MIN_VALUE ;</span><br><span class="line">		System.out.println(max4);&#x2F;&#x2F;9223372036854775807</span><br><span class="line">		System.out.println(min4);&#x2F;&#x2F;-9223372036854775808</span><br><span class="line">		</span><br><span class="line">&#x2F;&#x2F;		float--Float double--Double </span><br><span class="line">		&#x2F;&#x2F;区别:float是单精度,对小数位运算不精确</span><br><span class="line">		&#x2F;&#x2F;区别:double是单精度,对小数位运算非常精确</span><br><span class="line">		float max5 &#x3D; Float.MAX_VALUE ;</span><br><span class="line">		float min5 &#x3D; Float.MIN_VALUE ;</span><br><span class="line">		System.out.println(max5);&#x2F;&#x2F;3.4028235E38</span><br><span class="line">		System.out.println(min5);&#x2F;&#x2F;1.4E-45</span><br><span class="line">		</span><br><span class="line">		double max6 &#x3D; Double.MAX_VALUE ;</span><br><span class="line">		double min6 &#x3D; Double.MIN_VALUE ;</span><br><span class="line">		System.out.println(max6);&#x2F;&#x2F;1.7976931348623157E308</span><br><span class="line">		System.out.println(min6);&#x2F;&#x2F;4.9E-324</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;boolean--Boolean  char--Character</span><br><span class="line">		boolean b &#x3D; true; </span><br><span class="line">		boolean b2 &#x3D; false; </span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;char--字符型 --一个字符</span><br><span class="line">		char c &#x3D; &#39;a&#39; ;&#x2F;&#x2F;一个字母</span><br><span class="line">		char c2 &#x3D; &#39;1&#39; ;&#x2F;&#x2F;一个数字</span><br><span class="line">		char c3 &#x3D; &#39;中&#39; ;&#x2F;&#x2F;char类型能不能存一个中文汉字?  --  可以</span><br><span class="line">		char c4 &#x3D; 126 ;&#x2F;&#x2F;可以直接存数字</span><br><span class="line">		</span><br><span class="line">		System.out.println(c);</span><br><span class="line">		System.out.println(c2);</span><br><span class="line">		System.out.println(c3);</span><br><span class="line">		&#x2F;&#x2F;char类型是字符型,允许你直接存入一个数字本身.但是,使用时还是要用字符的.</span><br><span class="line">		&#x2F;&#x2F;使用时,底层会去查询ascii码表,数字对应的字符是啥,然后用字符本身.</span><br><span class="line">		&#x2F;&#x2F;ascii码表里,规定了0~127数字对应的字符,char类型的取值范围是0~65535.</span><br><span class="line">		&#x2F;&#x2F;自从128~65535默认对应的字符是?.</span><br><span class="line">		System.out.println(c4);&#x2F;&#x2F;~</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<pre><code>--3,练习:输入个人信息</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.basic;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;这个类用来测试  个人信息</span><br><span class="line">public class Test2_Info &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		String name &#x3D; &quot;渣渣辉&quot; ;</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;通过 + 拼接字符串</span><br><span class="line">&#x2F;&#x2F;		System.out.println(&quot;大家好,我叫渣渣辉&quot;);</span><br><span class="line">		System.out.println(&quot;大家好,我叫&quot;+name);</span><br><span class="line">		</span><br><span class="line">&#x2F;&#x2F;		System.out.println(&quot;渣渣辉,你好&quot;);</span><br><span class="line">		System.out.println(name+&quot;,你好&quot;);</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;动态拼接字符串  &quot;+??+&quot;</span><br><span class="line">&#x2F;&#x2F;		System.out.println(&quot;大家好,我叫渣渣辉!&quot;);</span><br><span class="line">		System.out.println(&quot;大家好,我叫&quot;+name+&quot;!&quot;);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<pre><code>--4,练习:圆形面积</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.basic;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line">&#x2F;&#x2F;这个类用来测试  圆形面积</span><br><span class="line">&#x2F;&#x2F;总结</span><br><span class="line">&#x2F;&#x2F;1,修改变量的值,既然被定义成了变量,他的值就可以一直被修改</span><br><span class="line">&#x2F;&#x2F;2,变量的值为了写的更加灵活,可以动态接收键盘输入的值</span><br><span class="line">&#x2F;&#x2F;3,拿着变量的值,带入公式,运算结果,并交给area&#x2F;zhouchang去保存</span><br><span class="line">&#x2F;&#x2F;4,动态拼接字符串,用+完成</span><br><span class="line">public class Test3_Area &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		double r &#x3D; 5.5 ;&#x2F;&#x2F;定义变量,记录圆的半径</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;动态的接收键盘输入的值</span><br><span class="line">		r &#x3D; new Scanner(System.in).nextDouble() ;&#x2F;&#x2F;修改变量的值</span><br><span class="line">		</span><br><span class="line">		double area &#x3D; 3.14 *r *r ;&#x2F;&#x2F;圆形面积:3.14 *r *r</span><br><span class="line">		System.out.println(&quot;圆的面积是:&quot;+area);&#x2F;&#x2F;打印面积</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;TODO 圆的周长</span><br><span class="line">		double zhouchang &#x3D; 2*3.14*r ;</span><br><span class="line">		System.out.println(&quot;圆的周长是:&quot;+zhouchang);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<pre><code>--5,练习:变量交换</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.basic;</span><br><span class="line"></span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;这个类用来测试  变量值交换</span><br><span class="line">public class Test4_Exchange &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;&#x2F;1,创建变量a和b</span><br><span class="line">		int a &#x3D; new Scanner(System.in).nextInt() ;</span><br><span class="line">		int b &#x3D; new Scanner(System.in).nextInt() ;</span><br><span class="line">&#x2F;&#x2F;		System.out.println(&quot;交换前:a&#x3D;1,b&#x3D;2&quot;);</span><br><span class="line">		System.out.println(&quot;交换前:a&#x3D;&quot;+a+&quot;,b&#x3D;&quot;+b);</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;2,交换值</span><br><span class="line">		int c &#x3D; a ;&#x2F;&#x2F;把a的值交给c保存</span><br><span class="line">		a &#x3D; b ;&#x2F;&#x2F;把b的值交给a保存</span><br><span class="line">		b &#x3D; c ; &#x2F;&#x2F;把c的值交给b保存</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;TODO 3,打印</span><br><span class="line">		System.out.println(&quot;交换后:a&#x3D;&quot;+a+&quot;,b&#x3D;&quot;+b);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<pre><code>--6,引用类型--数组/OOP ...</code></pre><h2 id="二-基本类型的字面值（5条）"><a href="#二-基本类型的字面值（5条）" class="headerlink" title="二,基本类型的字面值（5条）"></a>二,基本类型的字面值（5条）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.basic;</span><br><span class="line">&#x2F;&#x2F;这个类用来测试 字面值</span><br><span class="line">public class Test5 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;&#x2F;1,java里整数有4种类型,那么,我们写的整数到底字面值是什么类型呢?--int</span><br><span class="line">		int a &#x3D; 1000 ;</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;2,在取值范围内,可以直接赋值</span><br><span class="line">		byte m &#x3D; 123 ;</span><br><span class="line">&#x2F;&#x2F;		byte n &#x3D; 128 ;&#x2F;&#x2F;报错,右侧是int类型,左侧的byte类型根本就存不下</span><br><span class="line">&#x2F;&#x2F;		char o &#x3D; 65536 ;&#x2F;&#x2F;报错,右侧是int类型,左侧的char类型根本就存不下</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;3,java里小数有2种类型,那么,我们写的小数到底字面值是什么类型呢?--double</span><br><span class="line">		double x &#x3D; 9.9 ;</span><br><span class="line"></span><br><span class="line">		&#x2F;&#x2F;4,字面值的后缀lfd ,  l-long  f-float  d-double  </span><br><span class="line">	&#x2F;&#x2F;报错,因为有右侧字面值是int类型,但是,超出了int范围!!--加后缀L变成long类型</span><br><span class="line">		long b &#x3D; 10000000000L;</span><br><span class="line">	&#x2F;&#x2F;报错,右侧是double类型8字节,左侧是float类型4字节,存不下!!--加后缀f变成float类型</span><br><span class="line">		float y &#x3D; 9.9f ;</span><br><span class="line">		double z &#x3D; 3d;&#x2F;&#x2F;右侧就从字面值int类型转成了double类型</span><br><span class="line">		System.out.println(z);&#x2F;&#x2F;3.0</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="三-基本类型的类型转换"><a href="#三-基本类型的类型转换" class="headerlink" title="三,基本类型的类型转换"></a>三,基本类型的类型转换</h2><pre><code>--1,从小到大:拿着小类型给大类型赋值--隐式转换
+--2,从大到小:拿着大类型给小类型赋值--显式转换
+--3,测试</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">package cn.tedu.basic;</span><br><span class="line">&#x2F;&#x2F;这个类用来测试 转换</span><br><span class="line">public class Test6 &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;&#x2F;从小到大(隐式转换) byte小类型 -- long大类型</span><br><span class="line">		byte a &#x3D; 10 ;</span><br><span class="line">		&#x2F;&#x2F;拿着右侧的小类型a,给左侧的大类型b去赋值 --可以直接赋值!!</span><br><span class="line">		long b &#x3D; a ;</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;从大到小(显式转换) double-int</span><br><span class="line">		double m &#x3D; 10;</span><br><span class="line">		&#x2F;&#x2F;拿着右侧的大类型m,给左侧的小类型n去赋值--不可以!!需要强转</span><br><span class="line">		int n &#x3D; (int) m ;</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;练习:小转大long-float</span><br><span class="line">		long x &#x3D; 10 ;</span><br><span class="line">		float y &#x3D; x ;&#x2F;&#x2F;隐式转换</span><br><span class="line">		</span><br><span class="line">		&#x2F;&#x2F;大转小:double-float</span><br><span class="line">		double o &#x3D; 9 ;</span><br><span class="line">		float p &#x3D; (float)o ;&#x2F;&#x2F;显示转换</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="四-运算规则（5条）"><a href="#四-运算规则（5条）" class="headerlink" title="四,运算规则（5条）"></a>四,运算规则（5条）</h2><pre><code>package cn.tedu.basic;
+//这个类用来测试 运算规则
+public class Test7 {
+    public static void main(String[] args) {
+        //1,计算结果的数据类型，与最大类型一致
+        System.out.println(3/2); //1 , int/int-&gt;int
+        System.out.println(3d/2); //1.5 , double/int -&gt; double
+        System.out.println(3.14*10);//31.4 , double*int -&gt; double
+
+        //2,byte,short,char三种比int小的整数，运算时会先自动转换成int
+        byte a = 1;
+        byte b = 2;
+        //右侧拿着两个byte类型的值,做运算时,会变成大类型int类型--需要强转
+        byte c = (byte) (a*b);
+
+        //3,整数运算溢出  -- 因为在运算时已经超出了int的范围!!--需要加后缀L扩大范围
+        //光速运行一年的运行是多少米?--3亿m/s
+        System.out.println( 300000000L * 60 * 60 * 24 * 365   );
+
+        //4,浮点数的特殊值--由于小数运算中,出现了不应该出现的现象:分子或者分母为0了!!
+        System.out.println( 3.14/0 );//Infinity 
+        System.out.println( 0/0.0  );//NaN
+
+    }
+
+}</code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://blog.fate-seeker.com/2020/06/17/day01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="xiaohei">
+      <meta itemprop="description" content="笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/17/day01/" class="post-title-link" itemprop="url">java课程第一天笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-17 23:29:01" itemprop="dateCreated datePublished" datetime="2020-06-17T23:29:01+08:00">2020-06-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-18 09:46:29" itemprop="dateModified" datetime="2020-06-18T09:46:29+08:00">2020-06-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>  &lt;java从入门到精通&gt; &lt;java核心技术卷I II&gt;</p>
+<p>一,学习资料的下载<br>    –网址:<a href="http://code.tarena.com.cn" target="_blank" rel="noopener">http://code.tarena.com.cn</a><br>    –用户名:tarenacode<br>    –密码:code_2017<br>二,jdk<br>    –1,java开发的核心就是jdk.jdk是简称,全称是,java开发工具包<br>    –2,需要下载 安装  配置 和检验<br>    –3,检验jdk是否成功?<br>        – 运行dos命令: java -version<br>        – C:\Users\Administrator&gt;java -version<br>           java version “1.8.0_45”<br>三,eclipse<br>    –1,用来做java开发的工具.工具有很多,比如:Myeclipse是收费的,    IDEA有收费版和免费体验版.<br>    –2,需要自己指定workspace,来保存你的代码.<br>    –3,使用eclipse开发,对于目录的要求非常严格<br>    –4,把代码放入相应的目录.工程/项目 – 包 – 类<br>四,使用eclipse<br>    –1,创建工程<br>        -右键-new-project-java project-next-输入工程名称-finish<br>    –2,创建包<br>        -选中src-右键-new-package-输入包名-finish<br>    –3,创建类<br>        -选中包-右键-new-class-输入类名-finish<br>    –4,说明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;单行注释</span><br><span class="line">&#x2F;* 多行注释 *&#x2F;</span><br><span class="line"></span><br><span class="line">&#x2F;*</span><br><span class="line"> * 	用来定义一个包</span><br><span class="line"> * package --是关键字 ,专门定义包</span><br><span class="line"> * cn.tedu.hello  --包名 ,  全小写+公司域名倒着写</span><br><span class="line"> * ; --Java语句结束符 </span><br><span class="line"> *&#x2F;</span><br><span class="line">package cn.tedu.hello;</span><br><span class="line">&#x2F;*</span><br><span class="line"> * 	定义类</span><br><span class="line"> * public --是java的关键字,专门用来描述类的访问权限</span><br><span class="line"> * class  --是java的关键字,专门用来定义类</span><br><span class="line"> * HelloWorld  --类名,符合驼峰命名法</span><br><span class="line"> * &#123; java代码    &#125;</span><br><span class="line"> *&#x2F;</span><br><span class="line">public class HelloWorld &#123;</span><br><span class="line">	&#x2F;*</span><br><span class="line">	 *   	定义主函数&#x2F;主方法&#x2F;main方法....用来作为程序的入口</span><br><span class="line">	 * public --是java的关键字, 用来描述主方法的 访问权限</span><br><span class="line">	 * static --是java的关键字,用来描述主方法是静态的</span><br><span class="line">	 * void --是java的关键字,用来描述主方法是 没有返回值的</span><br><span class="line">	 * main --是方法名</span><br><span class="line">	 * ()  -- 看做是方法的标志</span><br><span class="line">	 * String[] args -- 方法的参数</span><br><span class="line">	 * &#123;  java代码  &#x2F;  方法体      &#125;</span><br><span class="line">	 *&#x2F;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;*</span><br><span class="line">		 *	 指定输出的数据( syso + alt + &#x2F; )</span><br><span class="line">		 * System -- 是让程序发出一个系统指令</span><br><span class="line">		 * . 	  -- 调用系统的功能</span><br><span class="line">		 * out    --向外输出的动作</span><br><span class="line">		 * println --打印后换行</span><br><span class="line">		 * ()  -- 方法的标志</span><br><span class="line">		 * &quot;hello java123~&quot;  -- 方法的参数</span><br><span class="line">		 * ;  --java语句的结束符</span><br><span class="line">		 *&#x2F;</span><br><span class="line">		System.out.println(&quot;hello java123~&quot;);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://blog.fate-seeker.com/2020/06/17/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="xiaohei">
+      <meta itemprop="description" content="笔记">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="笔记">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/17/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-17 21:39:08" itemprop="dateCreated datePublished" datetime="2020-06-17T21:39:08+08:00">2020-06-17</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">xiaohei</p>
+  <div class="site-description" itemprop="description">笔记</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xiaohei</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
