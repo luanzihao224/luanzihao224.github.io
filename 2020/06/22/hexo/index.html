@@ -19,8 +19,13 @@
 <meta property="og:image" content="https://blog.fate-seeker.com/2020/06/22/hexo/blog.jpg">
 <meta property="og:image" content="https://blog.fate-seeker.com/2020/06/22/hexo/git1.jpg">
 <meta property="og:image" content="https://blog.fate-seeker.com/2020/06/22/hexo/git2.jpg">
+<meta property="og:image" content="https://blog.fate-seeker.com/2020/06/22/hexo/sshkey.jpg">
+<meta property="og:image" content="https://blog.fate-seeker.com/2020/06/22/hexo/sshkey2.jpg">
+<meta property="og:image" content="https://blog.fate-seeker.com/2020/06/22/hexo/git3.jpg">
+<meta property="og:image" content="https://blog.fate-seeker.com/2020/06/22/hexo/url.jpg">
+<meta property="og:image" content="https://blog.fate-seeker.com/2020/06/22/hexo/url2.jpg">
 <meta property="article:published_time" content="2020-06-22T02:26:17.000Z">
-<meta property="article:modified_time" content="2020-06-22T11:27:09.437Z">
+<meta property="article:modified_time" content="2020-06-22T11:48:31.000Z">
 <meta property="article:author" content="xiaohei">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -241,8 +246,53 @@
 <li>source：用来存放你的文章</li>
 <li>themes：主题</li>
 <li>** _config.yml: 博客的配置文件**<br><img src="/2020/06/22/hexo/dir.jpg" alt="目录截图"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">hexo g	&#x2F;&#x2F;生成静态页面<br>hexo server	开启hexo服务<br></code></pre></td></tr></table></figure>
-打开hexo的服务，在浏览器输入localhost:4000就可以看到你生成的博客了。<br>大概长这样<br><img src="/2020/06/22/hexo/blog.jpg" alt="blog截图"><br>我这里是装了主题了:)<br>使用ctrl+c可以把服务关掉。<h2 id="4-GitHub创建个人仓库"><a href="#4-GitHub创建个人仓库" class="headerlink" title="4.GitHub创建个人仓库"></a>4.GitHub创建个人仓库</h2>首先，你先要有一个GitHub账户，去注册一个吧。<br>注册完登录后，在GitHub.com中看到一个New repository，新建仓库<br><img src="/2020/06/22/hexo/git1.jpg" alt="git"><br>创建一个和你用户名相同的仓库，后面加.github.io，只有这样，将来要部署到GitHub page的时候，才会被识别，也就是xxxx.github.io，其中xxx就是你注册GitHub的用户名。我这里是已经建过了。<br><img src="/2020/06/22/hexo/git2.jpg" alt="git2"><br>点击create repository。</li>
+打开hexo的服务，在浏览器输入localhost:4000就可以看到你生成的博客了。<br>大概长这样<br><img src="/2020/06/22/hexo/blog.jpg" alt="blog截图"><br>我这里是装了主题了:)<br>使用ctrl+c可以把服务关掉。<h2 id="4-GitHub创建个人仓库"><a href="#4-GitHub创建个人仓库" class="headerlink" title="4.GitHub创建个人仓库"></a>4.GitHub创建个人仓库</h2></li>
 </ul>
+<p>首先，你先要有一个GitHub账户，去注册一个吧。<br>注册完登录后，在GitHub.com中看到一个New repository，新建仓库<br><img src="/2020/06/22/hexo/git1.jpg" alt="git"></p>
+<p>创建一个和你用户名相同的仓库，后面加.github.io，只有这样，将来要部署到GitHub page的时候，才会被识别，也就是xxxx.github.io，其中xxx就是你注册GitHub的用户名。我这里是已经建过了。</p>
+<p><img src="/2020/06/22/hexo/git2.jpg" alt="git2"></p>
+<p>点击create repository。</p>
+<h2 id="5-生成SSH添加到GitHub"><a href="#5-生成SSH添加到GitHub" class="headerlink" title="5.生成SSH添加到GitHub"></a>5.生成SSH添加到GitHub</h2><p>回到你的git bash中，(终端或者打开git bash)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">git config --global user.name &quot;yourname&quot;	&#x2F;&#x2F;你的github用户名<br>git config --global user.email &quot;youremail&quot;	&#x2F;&#x2F;可以输入注册邮箱<br></code></pre></td></tr></table></figure>
+<p>这里的yourname输入你的GitHub用户名，youremail输入你GitHub的邮箱。这样GitHub才能知道你是不是对应它的账户。</p>
+<p>可以用以下两条，检查一下你有没有输对</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">git config user.name<br>git config user.email<br></code></pre></td></tr></table></figure>
+<p>然后创建SSH,一路回车</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">ssh-keygen -t rsa -C &quot;youremail&quot;	&#x2F;&#x2F;一直回车<br></code></pre></td></tr></table></figure>
+<p>这个时候它会告诉你已经生成了.ssh的文件夹。在你的电脑中找到这个文件夹。</p>
+<p>ssh，简单来讲，就是一个秘钥，其中，<code>id_rsa</code>是你这台电脑的私人秘钥，不能给别人看的，<code>id_rsa.pub</code>是公共秘钥，可以随便给别人看。把这个公钥放在GitHub上，这样当你链接GitHub自己的账户时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过git上传你的文件到GitHub上。</p>
+<p><img src="/2020/06/22/hexo/sshkey.jpg" alt="ssh"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">cat id_rsa.pub<br></code></pre></td></tr></table></figure>
+
+<p>而后在GitHub的setting中，找到SSH keys的设置选项，点击<code>New SSH key</code><br>把你的<code>id_rsa.pub</code>里面的信息复制进去。</p>
+<p><img src="/2020/06/22/hexo/sshkey2.jpg" alt="ssh"></p>
+<p>在gitbash中，查看是否成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">ssh -T git@github.com<br></code></pre></td></tr></table></figure>
+
+<h2 id="6-将hexo部署到GitHub"><a href="#6-将hexo部署到GitHub" class="headerlink" title="6.将hexo部署到GitHub"></a>6.将hexo部署到GitHub</h2><p>虽然我们可以通过<code>hexo s</code>启动服务，通过IP访问，或者域名解析到IP，但是谁用一直占用这一台电脑24小时开着呢<br>这一步，我们就可以将hexo和GitHub关联起来，也就是将hexo生成的文章部署到GitHub上，打开站点配置文件<code>_config.yml</code>，翻到最后，修改为<br>YourgithubName就是你的GitHub账户</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plain">deploy:<br>  type: git<br>  repo: https:&#x2F;&#x2F;github.com&#x2F;YourgithubName&#x2F;YourgithubName.github.io.git<br>  branch: master<br></code></pre></td></tr></table></figure>
+<p>这个时候需要先安装deploy-git ，也就是部署的命令,这样你才能用命令部署到GitHub。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">npm install hexo-deployer-git --save<br></code></pre></td></tr></table></figure>
+<p>然后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plain">hexo clean<br>hexo generate<br>hexo deploy<br>这些我们都可以进行简写<br>hexo g<br>hexo d<br></code></pre></td></tr></table></figure>
+
+<p>其中:<br><code>hexo clean</code>清除了你之前生成的东西，也可以不加。<br><code>hexo generate</code>顾名思义，生成静态文章，可以用<code>hexo g</code>缩写<br><code>hexo deploy</code>部署文章，可以用<code>hexo d</code>缩写</p>
+<p>注意deploy时可能要你输入username和password。<br>得到下图就说明部署成功了，过一会儿就可以在<code>http://yourname.github.io</code>这个网站看到你的博客了！！</p>
+<p><img src="/2020/06/22/hexo/git3.jpg" alt="git3"></p>
+<h2 id="7-设置个人域名"><a href="#7-设置个人域名" class="headerlink" title="7.设置个人域名"></a>7.设置个人域名</h2><p>现在你的个人网站的地址是<code>yourname.github.io</code>，如果觉得这个网址逼格不太够，这就需要你设置个人域名了。但是需要花钱。<br>注册一个阿里云账户,在阿里云上买一个域名，我买的是<code>fate-seeker.com</code>，各个后缀的价格不太一样,看个人喜好咯。</p>
+<p>你需要先去进行实名认证,然后在域名控制台中，看到你购买的域名。</p>
+<p>点解析进去，添加解析。</p>
+<p><img src="/2020/06/22/hexo/url.jpg" alt="url"></p>
+<p>登录GitHub，进入之前创建的仓库，点击settings，设置Custom domain，输入你的域名</p>
+<p><img src="/2020/06/22/hexo/url2.jpg" alt="url"></p>
+<p>然后在你的博客文件source中创建一个名为CNAME文件，不要后缀。写上你的域名。</p>
+<p>最后，在gitbash中，输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs plain">hexo clean<br>hexo g<br>hexo d<br></code></pre></td></tr></table></figure>
+<p>过不了多久，再打开你的浏览器，输入你自己的域名，就可以看到搭建的网站啦！</p>
+<p>接下来你就可以正式开始写文章了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">hexo new newpapername<br></code></pre></td></tr></table></figure>
+
+<p>就可以看到更新了。</p>
 
 	
 
@@ -337,7 +387,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo作为一个快速简洁的博客框架，用它来搭建博客真的非常容易。"><span class="toc-number">1.</span> <span class="toc-text">hexo作为一个快速简洁的博客框架，用它来搭建博客真的非常容易。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo简介"><span class="toc-number">2.</span> <span class="toc-text">Hexo简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo是一款基于Node-js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首选框架。大家可以进入hexo官网进行详细查看，因为Hexo的创建者是台湾人，对中文的支持很友好，可以选择中文进行查看。"><span class="toc-number">2.1.</span> <span class="toc-text">Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首选框架。大家可以进入hexo官网进行详细查看，因为Hexo的创建者是台湾人，对中文的支持很友好，可以选择中文进行查看。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#教程分三个部分，"><span class="toc-number">2.2.</span> <span class="toc-text">教程分三个部分，</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一部分：hexo的初级搭建还有部署到github-page上，以及个人域名的绑定。"><span class="toc-number">2.2.1.</span> <span class="toc-text">第一部分：hexo的初级搭建还有部署到github page上，以及个人域名的绑定。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二部分：hexo的基本配置，更换主题，实现多终端工作，以及在coding-page部署实现国内外分流"><span class="toc-number">2.2.2.</span> <span class="toc-text">第二部分：hexo的基本配置，更换主题，实现多终端工作，以及在coding page部署实现国内外分流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三部分：hexo添加各种功能，包括搜索的SEO，阅读量统计，访问量统计和评论系统等。"><span class="toc-number">2.2.3.</span> <span class="toc-text">第三部分：hexo添加各种功能，包括搜索的SEO，阅读量统计，访问量统计和评论系统等。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第一部分"><span class="toc-number">2.3.</span> <span class="toc-text">第一部分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo的初级搭建还有部署到github-page上，以及个人域名的绑定。"><span class="toc-number">2.3.1.</span> <span class="toc-text">hexo的初级搭建还有部署到github page上，以及个人域名的绑定。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo简介-1"><span class="toc-number">2.4.</span> <span class="toc-text">Hexo简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo搭建步骤"><span class="toc-number">2.5.</span> <span class="toc-text">Hexo搭建步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-安装Git"><span class="toc-number">2.6.</span> <span class="toc-text">1.安装Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-安装nodejs"><span class="toc-number">2.7.</span> <span class="toc-text">2.安装nodejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-安装hexo"><span class="toc-number">2.8.</span> <span class="toc-text">3.安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-GitHub创建个人仓库"><span class="toc-number">2.9.</span> <span class="toc-text">4.GitHub创建个人仓库</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo作为一个快速简洁的博客框架，用它来搭建博客真的非常容易。"><span class="toc-number">1.</span> <span class="toc-text">hexo作为一个快速简洁的博客框架，用它来搭建博客真的非常容易。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hexo简介"><span class="toc-number">2.</span> <span class="toc-text">Hexo简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo是一款基于Node-js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首选框架。大家可以进入hexo官网进行详细查看，因为Hexo的创建者是台湾人，对中文的支持很友好，可以选择中文进行查看。"><span class="toc-number">2.1.</span> <span class="toc-text">Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首选框架。大家可以进入hexo官网进行详细查看，因为Hexo的创建者是台湾人，对中文的支持很友好，可以选择中文进行查看。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#教程分三个部分，"><span class="toc-number">2.2.</span> <span class="toc-text">教程分三个部分，</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一部分：hexo的初级搭建还有部署到github-page上，以及个人域名的绑定。"><span class="toc-number">2.2.1.</span> <span class="toc-text">第一部分：hexo的初级搭建还有部署到github page上，以及个人域名的绑定。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二部分：hexo的基本配置，更换主题，实现多终端工作，以及在coding-page部署实现国内外分流"><span class="toc-number">2.2.2.</span> <span class="toc-text">第二部分：hexo的基本配置，更换主题，实现多终端工作，以及在coding page部署实现国内外分流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三部分：hexo添加各种功能，包括搜索的SEO，阅读量统计，访问量统计和评论系统等。"><span class="toc-number">2.2.3.</span> <span class="toc-text">第三部分：hexo添加各种功能，包括搜索的SEO，阅读量统计，访问量统计和评论系统等。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第一部分"><span class="toc-number">2.3.</span> <span class="toc-text">第一部分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo的初级搭建还有部署到github-page上，以及个人域名的绑定。"><span class="toc-number">2.3.1.</span> <span class="toc-text">hexo的初级搭建还有部署到github page上，以及个人域名的绑定。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo简介-1"><span class="toc-number">2.4.</span> <span class="toc-text">Hexo简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo搭建步骤"><span class="toc-number">2.5.</span> <span class="toc-text">Hexo搭建步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-安装Git"><span class="toc-number">2.6.</span> <span class="toc-text">1.安装Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-安装nodejs"><span class="toc-number">2.7.</span> <span class="toc-text">2.安装nodejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-安装hexo"><span class="toc-number">2.8.</span> <span class="toc-text">3.安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-GitHub创建个人仓库"><span class="toc-number">2.9.</span> <span class="toc-text">4.GitHub创建个人仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-生成SSH添加到GitHub"><span class="toc-number">2.10.</span> <span class="toc-text">5.生成SSH添加到GitHub</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-将hexo部署到GitHub"><span class="toc-number">2.11.</span> <span class="toc-text">6.将hexo部署到GitHub</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-设置个人域名"><span class="toc-number">2.12.</span> <span class="toc-text">7.设置个人域名</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
