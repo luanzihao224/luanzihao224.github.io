@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.fate-seeker.com/2020/06/22/hexo/</loc>
+    
+    <lastmod>2020-06-22T14:11:04.606Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.fate-seeker.com/2020/06/22/Statistic/</loc>
+    
+    <lastmod>2020-06-22T14:09:37.811Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.fate-seeker.com/2020/06/22/Javaoop/</loc>
     
     <lastmod>2020-06-22T13:03:00.216Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>https://blog.fate-seeker.com/2020/06/22/mv/</loc>
     
     <lastmod>2020-06-22T12:34:47.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.fate-seeker.com/2020/06/22/hexo/</loc>
-    
-    <lastmod>2020-06-22T11:48:31.000Z</lastmod>
     
   </url>
   
