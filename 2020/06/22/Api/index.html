@@ -6,20 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://blog.fate-seeker.com">
-  <title>mind | 啃java</title>
+  <title>Java API 基础1 | 啃java</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Java面向对象">
+  <meta name="description" content="Java API 基础1本文中包含API相关思维导图和课堂笔记整理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mind">
-<meta property="og:url" content="https://blog.fate-seeker.com/2020/06/22/Javaoop/index.html">
+<meta property="og:title" content="Java API 基础1">
+<meta property="og:url" content="https://blog.fate-seeker.com/2020/06/22/Api/index.html">
 <meta property="og:site_name" content="啃java">
-<meta property="og:description" content="Java面向对象">
+<meta property="og:description" content="Java API 基础1本文中包含API相关思维导图和课堂笔记整理">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-06-22T12:35:41.000Z">
-<meta property="article:modified_time" content="2020-06-22T13:03:00.216Z">
+<meta property="og:image" content="https://blog.fate-seeker.com/2020/06/22/Api/image008.png">
+<meta property="og:image" content="https://blog.fate-seeker.com/2020/06/22/Api/image009.png">
+<meta property="article:published_time" content="2020-06-22T14:26:17.000Z">
+<meta property="article:modified_time" content="2020-06-23T16:20:41.000Z">
 <meta property="article:author" content="xiaohei">
-<meta property="article:tag" content="java">
+<meta property="article:tag" content="mind">
+<meta property="article:tag" content="Api">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.fate-seeker.com/2020/06/22/Api/image008.png">
   
     <link rel="alternative" href="/atom.xml" title="啃java" type="application/atom+xml">
   
@@ -165,14 +169,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Javaoop" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Api" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      mind
+      Java API 基础1
     </h1>
   
 
@@ -183,8 +187,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/06/22/Javaoop/" class="archive-article-date">
-  	<time datetime="2020-06-22T12:35:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
+<a href="/2020/06/22/Api/" class="archive-article-date">
+  	<time datetime="2020-06-22T14:26:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
 </a>
 
         
@@ -194,545 +198,148 @@
       
 
 	
-		<h1 id="Java面向对象"><a href="#Java面向对象" class="headerlink" title="Java面向对象"></a>Java面向对象</h1><a id="more"></a>
-<h2 id="Java类及类的成员"><a href="#Java类及类的成员" class="headerlink" title="Java类及类的成员"></a>Java类及类的成员</h2><h3 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h3><p>类和对象的使用：<br>创建类，设计类的成员<br>创建类的对象<br>通过“对象.属性”、”对象.方法”的方式调用</p>
-<ul>
-<li><p>类：对一类事物的描述，是抽象、概念上的定义</p>
-<ul>
-<li><p>可以通过final、abstract修饰</p>
-<ul>
-<li><p>final修饰</p>
-<ul>
-<li>final修饰的类不能被其他的类所继承（其中的方法全为final的方法）</li>
-</ul>
-</li>
-<li><p>abstract修饰 </p>
-<ul>
-<li>此类不能实例化</li>
-<li>抽象类中一定有构造器，便于子类实例化时调用（涉及：子类对象实例化的全过程）</li>
-<li>开发中，都会提供抽象类的子类，让子类对象实例化，完成相关的操作 —&gt;抽象的使用前提：继承性</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>对象：实际存在的该类事物的个体（实例）</p>
-<p>面向对象的程序设计的重点就是设计类<br>设计类就是设计类的成员</p>
-<ul>
-<li>每一个实例haul的对象都独立的拥有一套类的属性，意味着我们修改一个对象的属性值a，不会影响另一个对象的a的值（static修饰的除外）</li>
-<li>通过”对象.属性”、”对象.方法”的方式调用</li>
-</ul>
-</li>
-</ul>
-<h3 id="类的成员"><a href="#类的成员" class="headerlink" title="类的成员"></a>类的成员</h3><ul>
-<li><p>属性</p>
-<p>①默认初始化<br> ②显式初始化/⑤在代码块中赋值<br> ③构造器中初始化<br> ④有了对象以后，可以通过”对象.属性”或”对象.方法”的方式，进行赋值<br>执行的先后顺序：① - ② / ⑤ - ③ - ④</p>
-<p>显示初始化和代码块中赋值是同等地位的，谁先谁后就看在代码中的顺序关系了</p>
-<ul>
-<li><p>属性可以被final、static等修饰</p>
-<ul>
-<li><p>final修饰属性</p>
-<ul>
-<li>可以考虑赋值的位置：显式初始化、代码块中初始化、构造器中初始化</li>
-</ul>
-</li>
-<li><p>static修饰属性</p>
-<ul>
-<li>静态变量随着类的加载而加载。可以通过”类.静态变量”的方式进行调用</li>
-<li>静态变量的加载要早于对象的创建</li>
-<li>由于类只会加载一次，则静态变量在内存中也只会存在一份：存在方法区的静态域中</li>
-<li>我们创建了类的多个对象，多个对象共享同一个静态变量。当通过某一个对象修改静态变量时，会导致其他对象调用此静态变量时，是修改过了的</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>属性 vs 局部变量</p>
-<ul>
-<li><p>相同点</p>
-<ul>
-<li>格式：（看情况添加修饰）数据类型 变量名 = 变量值</li>
-<li>先声明后使用（必须初始化后才能使用）</li>
-<li>都有其对应的作用域</li>
-</ul>
-</li>
-<li><p>不同点</p>
-<ul>
-<li><p>在类中声明位置不同</p>
-<ul>
-<li>属性直接定义在类的{}中</li>
-<li>局部变量定义在方法体、构造器、形参、代码块</li>
-</ul>
-</li>
-<li><p>关于权限修饰符的不同</p>
-<ul>
-<li>属性可以使用如public等的权限修饰符而局部变量不行</li>
-</ul>
-</li>
-<li><p>默认初始化的情况</p>
-<ul>
-<li>属性：数值类型的默认初始化为0\0.0，boolean类型的为false，引用类型的为null</li>
-<li>局部变量：没有默认初始化，意味着在使用前要显示初始化值</li>
-</ul>
-</li>
-<li><p>在内存中加载的位置</p>
-<ul>
-<li>属性加载到堆区（非static），局部变量在栈区</li>
-</ul>
-</li>
-<li><p>局部变量不能用static修饰</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>方法</p>
-<ul>
-<li><p>格式：权限修饰符 （修饰词） 返回值类型（形参列表）方法名{ 方法体 }</p>
-</li>
-<li><p>方法可以被static、final、abstract修饰</p>
-<ul>
-<li><p>static修饰方法</p>
-<ul>
-<li>可以通过”类名.”的方式调用，也可通过对象调用</li>
-<li>被static修饰是静态方法，随着类的加载而加载，在方法中只能调用static方法和属性，不能出现this、super关键字（因为这些都是和对象有关，而静态方法的加载早于对象的创建）</li>
-</ul>
-</li>
-<li><p>final修饰的方法不能够被重写</p>
-</li>
-<li><p>abstract修饰方法 </p>
-<ul>
-<li>抽象方法只方法的声明，没方法体</li>
-<li>包含抽象方法的类，一定是一个抽象类。反之，抽象类中可以没有抽象方法的</li>
-<li>若子类重写了父类中的所有的抽象方法后，此子类方可实例化 、若子类没重写父类中的所的抽象方法，则此子类也是一个抽象类，需要使用abstract修饰</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>方法的重载</p>
-<ul>
-<li>同一个类（或子类中）中允许存在一个及多个同名的方法，只要他们的参数列表不同（参数个数，参数类型不同），这些方法之间构成了重载</li>
-<li>方法的签名（方法名和形参列表）要不同，和方法的权限修饰符、返回值类型、方法体、形参变量名无关</li>
-<li>方法名—&gt;参数列表，可以确定一个方法</li>
-</ul>
-</li>
-<li><p>方法的重写 </p>
-<ul>
-<li><p>子类继承父类后，可以在子类中定义与父类同名同参的方法进行覆盖操作（privat、static、final修饰的不行）</p>
-</li>
-<li><p>重写主要是为了多态，实现地址晚绑定的操作</p>
-</li>
-<li><p>重写的注意事项</p>
-<ul>
-<li>子类重写的方法的权限修饰符不小于父类中被重写的权限修饰符（子类不能重写父类中声明为private的方法）</li>
-<li>父类中被重写的方法的返回值为void，则子类重写的方法的返回值类型也为void</li>
-<li>父类中被重写的方法的返回值类型为A类型，则子类重写的方法的返回值类为A类型或者A类型的子类（子类是针对A类型是一个类类型而言的）</li>
-<li>子类重写的方法抛出的异常类型不大于父类被重写的方法抛出的异常类型</li>
-<li>子类和父类中同名同参的方法要么都是static或者都是非static的，非static的是重写，static的不是重写</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Java中参数传递机制：值传递机制</p>
-</li>
-<li><p>递归方法</p>
-<ul>
-<li>一个方法体内，自己调用自己（一定要朝着已知方向递归，不然就会无穷递归）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>构造器</p>
-<ul>
-<li><p>构造器的作用</p>
-<ul>
-<li>创建对象</li>
-<li>初始化对象信息</li>
-</ul>
-</li>
-<li><p>使用说明</p>
-<ul>
-<li>如果没显式的定义类的构造器的话，则系统默认提供一个空参的构造器</li>
-<li>一旦我们显式的定义了类的构造器之后，系统就不再提供默认的空参构造器</li>
-<li>定义构造器的格式：权限修饰符  类名(形参列表){}</li>
-<li>一个类中定义的多个构造器，彼此构成重载</li>
-<li>一个类中，至少会有一个构造器</li>
-</ul>
-</li>
-<li><p>内部第一行为this(…)或super(…)</p>
-<p>创建一个子类对象，必须先初始化父类对象（即先调用父类的构造器，这也是为什么this(…)和super(…)只能放在首行的原因）</p>
-<p>当子类继承父类后，就继承了父类中所有的属性和方法，那么子类有必要知道父类如何为对象初始化！那就要先调用父类的构造器才行!</p>
-<ul>
-<li><p>this</p>
-<ul>
-<li>我们在类的构造器中，可以显式的使用”this(形参列表)”方式，调用本类中指定的其他构造器</li>
-<li>构造器中不能通过”this(形参列表)”方式调用自己（无穷递归了）</li>
-<li>如果一个类中有n个构造器，则最多有 n - 1构造器中使用了”this(形参列表)”</li>
-<li>规定：”this(形参列表)”必须声明在当前构造器的首行</li>
-<li>规定：”this(形参列表)”必须声明在当前构造器的首行，故只能有一个</li>
-</ul>
-</li>
-<li><p>super</p>
-<ul>
-<li>我们可以在子类的构造器中显式的使用”super(形参列表)”的方式，调用父类中声明的指定的构造器</li>
-<li>“super(形参列表)”的使用，必须声明在子类构造器的首行！</li>
-<li>我们在类的构造器中，针对于”this(形参列表)”或”super(形参列表)”只能二选一，不能同时出现</li>
-<li>在构造器的首行，没显式的声明”this(形参列表)”或”super(形参列表)”，则默认调用的是父类中空参的构造器：super()</li>
-<li>在类的多个构造器中，至少一个类的构造器中使用了”super(形参列表)”，调用父类中的构造器</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>代码块</p>
-<ul>
-<li><p>用来初始类和对象的信息</p>
-</li>
-<li><p>static代码块</p>
-<ul>
-<li>内部可以输出语句</li>
-<li>随着类的加载而执行,而且只执行一次</li>
-<li>如果一个类中定义了多个静态代码块，则按照声明的先后顺序执行</li>
-<li>静态代码块的执行要优先于非静态代码块的执行</li>
-<li>静态代码块内只能调用静态的属性、静态的方法，不能调用非静态的结构</li>
-</ul>
-</li>
-<li><p>非static代码块</p>
-<ul>
-<li>内部可以输出语句</li>
-<li>随着对象的创建而执行</li>
-<li>作用：可以在创建对象时，对对象的属性等进行初始化</li>
-<li>如果一个类中定义了多个非静态代码块，则按照声明的先后顺序执行</li>
-<li>非静态代码块内可以调用静态的属性、静态的方法，或非静态的属性、非静态的方法</li>
-</ul>
-</li>
-<li><p>总结子类和父类中加载个模块的顺序：由父及子，静态先行</p>
-</li>
-</ul>
-</li>
-<li><p>内部类</p>
-<ul>
-<li><p>概述”：Java中允许将一个类A声明在另一个类B中，则类A就是内部类，类B称为外部类.</p>
-</li>
-<li><p>成员内部类</p>
-<ul>
-<li><p>static</p>
-<ul>
-<li><p>创建内部类的对象方式：外部类.内部类 引用名 = new 外部类.内部类()；</p>
-<p>//创建静态的Dog内部类的实例(静态的成员内部类):<br>Person.Dog dog = new Person.Dog();</p>
-</li>
-<li><p>内部类内部调用外部类的结构</p>
-<ul>
-<li>内部类成员直接调，如在方法中有相同的名称的形参就可以加上this</li>
-<li>外部类的成员 外部类名.this.的方式调用</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>非static</p>
-<ul>
-<li><p>因为是非static只能通过外部类的对象类创建：外部类.内部类 引用名 = 外部类对象.new 内部类() </p>
-<p>//创建非静态的Bird内部类的实例(非静态的成员内部类):<br>//Person.Bird bird = new Person.Bird();//错误的<br>Person p = new Person();<br>Person.Bird bird = p.new Bird();</p>
-</li>
-<li><p>static只能调用外部类静态的结构，非static静态和非静态的都能调用</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>局部内部类</p>
-<ul>
-<li>主要的应用就是返回一个实现了一个接口的实现类的对象</li>
-<li>某个方法中有内部类并且在内部类中方法中调用了该方法中的属性，则该属性为final修饰的</li>
-</ul>
-</li>
-<li><p>成员内部类和局部内部类在编译以后都会生成字节码文件</p>
-<p>格式：成员内部类：外部类$内部类名.class</p>
-<pre><code>局部内部类：外部类$数字 内部类名.class</code></pre></li>
-</ul>
-</li>
-</ul>
-<h2 id="面向对象的三大特征"><a href="#面向对象的三大特征" class="headerlink" title="面向对象的三大特征"></a>面向对象的三大特征</h2><h3 id="封装性"><a href="#封装性" class="headerlink" title="封装性"></a>封装性</h3><ul>
-<li><p>封装性的引入：隐藏对象内部的复杂性，只对外公开简单的接口。便于外界调用，从而提高系统的可扩展性、可维护性。通俗的说，把该隐藏的隐藏起来，该暴露的暴露出来。这就是封装性的设计思想</p>
-</li>
-<li><p>简单的体现：讲类中的属性设置为private权限的并提供公共的(设置)setXxx和（获取）getXxx方法来操作该属性</p>
-</li>
-<li><p>灵活的使用四种权限修饰符来修饰属性、方法、构造器、内部类已达到隐藏的目的</p>
-</li>
-<li><p>单例模式（主要将构造器声明为private，使得外部不能创建对象，需要static配合）</p>
-<ul>
-<li><p>概述：所谓类的单例设计模式，就是采取一定的方法保证在整个的软件系统中，对某个类只能存在一个对象实例</p>
-</li>
-<li><p>饿汉式1</p>
-<ul>
-<li>内部有一个静态的本类的对象并显示初始化了，并通过方法返回</li>
-</ul>
-</li>
-<li><p>饿汉式2</p>
-<ul>
-<li>内部有一个静态的本类的对象放在静态代码块中初始化了，并通过方法返回</li>
-</ul>
-</li>
-<li><p>懒汉式</p>
-<ul>
-<li>内部有一个静态的本类的对象并显示置为null，在返回的时候判定是否为空（空就创建），然后返回（线程不安全）</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h3><ul>
-<li><p>关键字extends</p>
-</li>
-<li><p>如果没有显示指定父类，默认继承与java.lang.Object类</p>
-</li>
-<li><p>好处</p>
-<ul>
-<li>减少代码的冗余，提高代码的复用性</li>
-<li>便于功能的拓展</li>
-<li>为之后多态性的使用，提供了前提</li>
-</ul>
-</li>
-<li><p>格式：class A extends B{}</p>
-</li>
-<li><p>说明</p>
-<ul>
-<li>一旦子类继承了父类就继承了父类中的所有的属性和方法（构造器不能够被继承），由于权限的影响虽然继承了父类中private的方法，但是子类不能调用</li>
-<li>子类继承父类后还可定义自己特定的结构，实现对父类功能的拓展</li>
-<li>Java的单继承性：一个类只能有一个直接父类</li>
-<li>子父类的概念是相对的</li>
-<li>子类直接继承的称为直接父类，间接继承的称为间接父类</li>
-<li>子类继承父类后所有的间接父类的属性和方法都会继承</li>
-</ul>
-</li>
-<li><p>子类对象实例化全过程</p>
-<ul>
-<li>当我们通过子类的构造器创建子类对象时，我们一定会直接或间接的调用其父类的构造器，进而调用父类的父类的构造器，…直到调用了java.lang.Object类中空参的构造器为止。正因为加载过所有的父类的结构，所以才可以看到内存中父类中的结构，子类对象才可以考虑进行调用</li>
-<li>创建一个子类对象，必须先初始化父类对象</li>
-</ul>
-</li>
-</ul>
-<h3 id="多态性"><a href="#多态性" class="headerlink" title="多态性"></a>多态性</h3><ul>
-<li><p>可以理解为一种事物的多种形态</p>
-</li>
-<li><p>多态性依赖于类的继承、方法的重写</p>
-</li>
-<li><p>多态性的使用：虚拟方法调用</p>
-<ul>
-<li><p>父类的引用指向子类的对象（或子类的对象赋给父类的引用）</p>
-</li>
-<li><p>有了对象的多态性以后，我们在编译期，只能调用父类中声明的方法，但在运行期，我们实际执行的是子类重写父类的方法。</p>
-<ul>
-<li><p>向下转型</p>
-<ul>
-<li>当调用的方法是子类型中特有的，父类型中不存在，必须进行向下转换</li>
-<li>为了解决编译时只能调用父类中有的结构，要使用向下转型（强制类型转换）</li>
-<li>Father f1 = new Son();   // 这就叫 upcasting （向上转型)<br>// 现在 f1 引用指向一个Son对象</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>Son s1 = (Son)f1;   // 这就叫 downcasting (向下转型)<br>// 现在f1 还是指向 Son对象<br>            - instanceof 运算符，返回值是boolean类型，用于判断左边的对象与右边的类，当左边的对象是右边类或者子类所创建的对象时，返回值true，否则返回false<br>            - instanceof使用：new A()，赋给一个A或A的父类引用 x ，那么 x instanceof A及A的父类都是返回true</p>
-<pre><code>- 编译看左边，运行看右边（适用于方法）
-- 对象的多态性，只适用于方法，不适用于属性（编译和运行都看左边）</code></pre><ul>
-<li><p>多态性的概念也可以被说成“一个接口，多个方法”。</p>
-<ul>
-<li>java实现运行时多态性的基础是动态方法调度</li>
-<li>它是一种在运行时而不是在编译期调用重载方法的机制</li>
-</ul>
-</li>
-</ul>
-<h2 id="一些关键字"><a href="#一些关键字" class="headerlink" title="一些关键字"></a>一些关键字</h2><h3 id="return"><a href="#return" class="headerlink" title="return"></a>return</h3><ul>
-<li>使用在方法中</li>
-<li>作用：结束方法；针对有返回值的方法，返回所要的数据</li>
-<li>注意事项：在return后不能声明执行语句（因为不能被执行到，会报错）</li>
-</ul>
-<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><ul>
-<li><p>可以调用方法、属性、构造器</p>
-<ul>
-<li><p>通常情况下调用方法和属性都省略不写</p>
-</li>
-<li><p>属性</p>
-<ul>
-<li>主要是为了解决在方法和构造器中的形参和类的属性名同名，为了区分它们可以在类的属性前加this（非static）</li>
-</ul>
-</li>
-<li><p>方法</p>
-<ul>
-<li>通常省略</li>
-</ul>
-</li>
-<li><p>构造器</p>
-<ul>
-<li>详细见构造器中描述</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>this是非静态结构的隐式参数</p>
-</li>
-<li><p>this可以理解为：当前对象（非静态方法） 或 当前正在创建对象（构造器来说）</p>
-</li>
-</ul>
-<h3 id="package"><a href="#package" class="headerlink" title="package"></a>package</h3><ul>
-<li><p>使用说明</p>
-<ul>
-<li>JDK1.2开始不能使用以java开头命名的包</li>
-<li>为了更好的实现项目中类的管理，提供包的概念</li>
-<li>使用package声明类或接口所属的包，声明在源文件的首行</li>
-<li>包，属于标识符，遵循标识符的命名规则、规范(xxxyyyzzz)、“见名知意”</li>
-<li>每”.”一次，就代表一层文件目录</li>
-</ul>
-</li>
-<li><p>不同功能的类分包存放</p>
-<ul>
-<li>MVC设计模式</li>
-</ul>
-</li>
-</ul>
-<h3 id="import"><a href="#import" class="headerlink" title="import"></a>import</h3><ul>
-<li><p>为了方便使用写好的类（不导入就好写全名）</p>
-</li>
-<li><p>不同于C++的include（include是不包头文件怎么都不能用，Java不导入写全名也行）</p>
-</li>
-<li><p>使用说明</p>
-<ul>
-<li>在源文件中显式的使用import结构导入指定包下的类、接口</li>
-<li>声明在包的声明和类的声明之间</li>
-<li>如果需要导入多个结构，则并列写出即可</li>
-<li>使用”xxx.*”方式表明可以调用xxx包下的所结构（这里指的是类，不包含子包下的类）。但是如果使用的是xxx子包下的结构，则仍需要显式导入</li>
-<li>如果使用的类或接口是java.lang包下定义的，则可以省略import结构</li>
-<li>如果使用的类或接口是本包下定义的，则可以省略import结构</li>
-<li>如果在源文件中，使用了不同包下的同名的类，则必须至少一个类需要以全类名的方式显示</li>
-<li>import static:导入指定类或接口中的静态结构:属性或方法。 （类.*号的时候并不要求这个类中所有的方法全是静态的，只是会导入这个类中所有的静态方法）</li>
-</ul>
-</li>
-</ul>
-<h3 id="super"><a href="#super" class="headerlink" title="super"></a>super</h3><ul>
-<li><p>可以调用属性、方法、构造器</p>
-</li>
-<li><p>当子类和父类中定义了同名的属性时，我们要想在子类中调用父类中声明的属性，则必须显式的使用”super.属性”的方式，表明调用的是父类中声明的属性</p>
-</li>
-<li><p>当子类重写了父类中的方法以后，我们想在子类的方法中调用父类中被重写的方法时，则必须显式的使用”super.方法”的方式，表明调用的是父类中被重写的方法</p>
-</li>
-<li><p>调用构造器</p>
-<ul>
-<li>详细见构造器中</li>
-</ul>
-</li>
-</ul>
-<h3 id="static"><a href="#static" class="headerlink" title="static"></a>static</h3><p>推荐这几篇博客：<br><a href="https://blog.csdn.net/yabay2208/article/details/71171207" target="_blank" rel="noopener">https://blog.csdn.net/yabay2208/article/details/71171207</a><br><a href="https://blog.csdn.net/qq_36522306/article/details/80584595?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">https://blog.csdn.net/qq_36522306/article/details/80584595?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task</a><br>这个是JVM说类的加载，学了之后可以看看：<br><a href="https://github.com/LuVx21/doc/blob/master/source/_posts/03.Java/02.jvm/00.JVMClassLoader.md#%E5%8F%82%E8%80%83" target="_blank" rel="noopener">https://github.com/LuVx21/doc/blob/master/source/_posts/03.Java/02.jvm/00.JVMClassLoader.md#%E5%8F%82%E8%80%83</a></p>
-<ul>
-<li><p>可以修饰属性、方法、代码块、内部类</p>
-<ul>
-<li>详细见各个模块中</li>
-</ul>
-</li>
-</ul>
-<h3 id="final"><a href="#final" class="headerlink" title="final"></a>final</h3><ul>
-<li><p>可以修饰类、方法、变量（详细见各个模块）</p>
-<ul>
-<li>修饰类，该类不能被继承，类中的方法为final</li>
-<li>修饰方法，该方法不能被重写</li>
-<li>修饰后变成常量了，要初始化</li>
-</ul>
-</li>
-</ul>
-<h3 id="abstract"><a href="#abstract" class="headerlink" title="abstract"></a>abstract</h3><ul>
-<li>可以修饰类和方法（详细见各个模块）</li>
-</ul>
-<h3 id="interface"><a href="#interface" class="headerlink" title="interface"></a>interface</h3><ul>
-<li>详细见接口</li>
-</ul>
-<h2 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h2><h3 id="Object类是所有类的根父类"><a href="#Object类是所有类的根父类" class="headerlink" title="Object类是所有类的根父类"></a>Object类是所有类的根父类</h3><h3 id="如果在类的声明中未使用extends关键字指明其父类，则默认父类为java-lang-Object类"><a href="#如果在类的声明中未使用extends关键字指明其父类，则默认父类为java-lang-Object类" class="headerlink" title="如果在类的声明中未使用extends关键字指明其父类，则默认父类为java.lang.Object类"></a>如果在类的声明中未使用extends关键字指明其父类，则默认父类为java.lang.Object类</h3><h3 id="Object类中的功能（属性、方法）具有通用性"><a href="#Object类中的功能（属性、方法）具有通用性" class="headerlink" title="Object类中的功能（属性、方法）具有通用性"></a>Object类中的功能（属性、方法）具有通用性</h3><pre><code>属性：无
-方法：equals() / toString() / getClass() / hashCode() / clone() / finalize() / wait() / notify() / notifyAll()</code></pre><h3 id="Object类中只声明了一个空参的构造器"><a href="#Object类中只声明了一个空参的构造器" class="headerlink" title="Object类中只声明了一个空参的构造器"></a>Object类中只声明了一个空参的构造器</h3><h2 id="包装类的使用"><a href="#包装类的使用" class="headerlink" title="包装类的使用"></a>包装类的使用</h2><h3 id="为了使基本数据类型的变量具有类的特征，引入包装类"><a href="#为了使基本数据类型的变量具有类的特征，引入包装类" class="headerlink" title="为了使基本数据类型的变量具有类的特征，引入包装类"></a>为了使基本数据类型的变量具有类的特征，引入包装类</h3><h3 id="包装类和基本数据类型对应"><a href="#包装类和基本数据类型对应" class="headerlink" title="包装类和基本数据类型对应"></a>包装类和基本数据类型对应</h3><ul>
-<li>Byte</li>
-<li>Short</li>
-<li>Integer</li>
-<li>Long</li>
-<li>Float</li>
-<li>Double</li>
-<li>Boolean</li>
-<li>Character</li>
-</ul>
-<h3 id="基本数据类型、包装类、String三者转换"><a href="#基本数据类型、包装类、String三者转换" class="headerlink" title="基本数据类型、包装类、String三者转换"></a>基本数据类型、包装类、String三者转换</h3><ul>
-<li>基本数据类型&lt;—&gt;包装类：JDK 5.0 新特性：自动装箱 与自动拆箱</li>
-<li>基本数据类型、包装类—&gt;String:调用String重载的valueOf(Xxx xxx) </li>
-<li>String—&gt;基本数据类型、包装类:调用包装类的parseXxx(String s)</li>
-<li>转换时，可能会报NumberFormatException</li>
-</ul>
-<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
-<li>Vector类中关于添加元素，只定义了形参为Object类型的方法：<br>v.addElement(Object obj);   //基本数据类型 —&gt;包装类 —&gt;使用多态</li>
-</ul>
-<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><h3 id="使用interface关键字定义"><a href="#使用interface关键字定义" class="headerlink" title="使用interface关键字定义"></a>使用interface关键字定义</h3><h3 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h3><ul>
-<li><p>Java中，接口和类是并列的两个结构</p>
-</li>
-<li><p>结构</p>
-<ul>
-<li><p>属性：用public static final修饰的</p>
-</li>
-<li><p>方法：public abstract修饰的</p>
-</li>
-<li><p>静态方法</p>
-<ul>
-<li>只能通过接口名调用</li>
-</ul>
-</li>
-<li><p>默认方法</p>
-<ul>
-<li><p>实现类中可以调用接口中默认方法</p>
-</li>
-<li><p>一旦实现类重写了接口中默认方法，就会调用重写的方法</p>
-</li>
-<li><p>如果子类(或实现类)继承的父类和实现的接口中声明了同名同参数的默认方法，那么子类在没重写此方法的情况下，默认调用的是父类中的同名同参数的方法。–&gt;类优先原则</p>
-</li>
-<li><p>如果实现类实现了多个接口，而这多个接口中定义了同名同参数的默认方法，那么在实现类没重写此方法的情况下，报错。–&gt;接口冲突（如果继承了父类中也有这个同名同参的方法，就不会冲突）</p>
-</li>
-<li><p>如何在子类(或实现类)的方法中调用父类、接口中被重写的方法</p>
-<ul>
-<li>父类：super.</li>
-<li>接口：接口名.super.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>接口中不能定义构造器的！意味着接口不可以实例化</p>
-</li>
-<li><p>Java开发中，接口通过让类去实现(implements)的方式来使用（类似抽象方法）</p>
-</li>
-<li><p>Java类可以实现多个接口   —&gt;弥补了Java单继承性的局限性</p>
-<ul>
-<li>格式：class AA extends BB implements CC,DD,EE</li>
-</ul>
-</li>
-<li><p>接口与接口之间可以继承，而且可以多继承</p>
-</li>
-<li><p>接口的具体使用，体现多态性，接口实际上可以看成是一种规范</p>
-</li>
-</ul>
-<h3 id="体会"><a href="#体会" class="headerlink" title="体会"></a>体会</h3><ul>
-<li><p>接口使用上也满足多态性</p>
-</li>
-<li><p>接口，实际上就是定义了一种规范</p>
-</li>
-<li><p>开发中，体会面向接口编程！</p>
-<ul>
-<li>面向接口编程：我们在应用程序中，调用的结构都是JDBC中定义的接口，不会出现具体某一个<br>数据库厂商的API</li>
-</ul>
-</li>
-</ul>
-<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><ul>
-<li>代理模式</li>
-<li>工厂的设计模式</li>
-</ul>
+		<h2 id="Java-API-基础1"><a href="#Java-API-基础1" class="headerlink" title="Java API 基础1"></a>Java API 基础1</h2><h3 id="本文中包含API相关思维导图和课堂笔记整理"><a href="#本文中包含API相关思维导图和课堂笔记整理" class="headerlink" title="本文中包含API相关思维导图和课堂笔记整理"></a>本文中包含API相关思维导图和课堂笔记整理</h3><a id="more"></a>
+
+<h1 id="API思维导图"><a href="#API思维导图" class="headerlink" title="API思维导图"></a><center><strong>API思维导图</strong></center></h1><br>
+
+
+
+
+	<div class="row">
+    <embed src="APIse.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+ 
+
+
+<br>
+
+<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><ol>
+<li>概念<br>类 Object 是类层次结构的根类。每个类都使用 Object 作为超类。所有对象（包括数组）都实现这个类的方法。</li>
+<li>常用方法:见API手册<br><code>String toString()</code>返回该对象的字符串表示。<br><code>int hashCode()</code>返回该对象的哈希码值。<br><code>Class&lt;?&gt; getClass()</code> 返回此 Object 的运行时类。<br><code>boolean equals(Object obj)</code>指示其他某个对象是否与此对象“相等”。 </li>
+<li>练习</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><code class="hljs plain">public class Test_Object &#123;<br>    public static void main(String[] args) &#123;<br>        &#x2F;&#x2F;2, 创建Student对象<br>        Student s &#x3D; new Student(&quot;jack&quot;,20);<br>        System.out.println( s.getAge() );&#x2F;&#x2F;使用了自己的功能<br>        System.out.println( s.getName() );&#x2F;&#x2F;使用了自己的功能<br><br>        System.out.println(  s.hashCode() ); &#x2F;&#x2F;使用了父类Object的功能,计算对象在内存中的哈希码值1704856573<br>        System.out.println(  s.toString() ); &#x2F;&#x2F;使用了父类Object的功能,返回对象在内存中的地址值,cn.tedu.api.Student@659e0bfd<br><br>        &#x2F;&#x2F;3, 打印s时,你想显示地址值,而是想显示对象的属性值<br>        &#x2F;&#x2F;默认展示了地址值cn.tedu.api.Student@659e0bfd,为什么?--因为底层帮你调用了Object提供的toString(),Object就是打印地址值<br>        &#x2F;&#x2F;重写toString()  --- 就可以展示重写后的方法体.也就是可以展示属性值<br>        System.out.println(s);&#x2F;&#x2F;Student [name&#x3D;jack, age&#x3D;20]<br><br>        Class c &#x3D; s.getClass() ;<br>        System.out.println(c);&#x2F;&#x2F;class cn.tedu.api.Student<br><br>        Student s2 &#x3D; new Student(&quot;jack&quot;,20);<br>        &#x2F;&#x2F;4, 比较s对象和s2对象是否相等,默认使用了Object提供的equals()---使用&#x3D;&#x3D;比较<br>        &#x2F;&#x2F;&#x3D;&#x3D; 比较基本类型的变量时,直接比值本身. 比较引用类型的变量时,比的是地址值<br>        boolean flag &#x3D; s.equals(s2) ;<br>        System.out.println(flag);&#x2F;&#x2F;false,比较引用类型的变量时,比的是地址值<br><br>        &#x2F;&#x2F;5, 不要比较两个对象间的地址值,而是,比较两个对象间的属性值,<br>        &#x2F;&#x2F;如果属性都一样,让两个对象比较完是相等的,也就是让equals()返true--重写equals()<br>    &#125;<br>&#125;<br>&#x2F;&#x2F;1, 所有的类 , 都默认继承自Object , 也就是Object这个父类里的功能 , 可以被任何类使用 !!<br>class Student extends Object&#123;<br>    &#x2F;&#x2F;构造方法 source-倒数第三个-ok<br>    public Student() &#123;  &#125;<br>    public Student(String name, int age) &#123;<br>        super();<br>        this.name &#x3D; name;<br>        this.age &#x3D; age;<br>    &#125;<br>    &#x2F;&#x2F;封装属性<br>    private String name;<br>    private int age;<br><br>    &#x2F;&#x2F;set()&#x2F;get()  -  source-getters and setters-select all-ok<br>    public String getName() &#123;<br>        return name;<br>    &#125;<br>    public void setName(String name) &#123;<br>        this.name &#x3D; name;<br>    &#125;<br>    public int getAge() &#123;<br>        return age;<br>    &#125;<br>    public void setAge(int age) &#123;<br>        this.age &#x3D; age;<br>    &#125;<br>    &#x2F;&#x2F;4, Object里默认提供的toString() 的实现方式是显示对象的地址值,我不想要这个效果,想显示对象的属性值--重写toString()<br>    &#x2F;&#x2F;source- 倒数第四个-ok<br>    @Override<br>    public String toString() &#123;<br>        return &quot;Student [name&#x3D;&quot; + name + &quot;, age&#x3D;&quot; + age + &quot;]&quot;;<br>    &#125;<br>    &#x2F;&#x2F;5.1, 现在比较两个对象,是根据Object提供的默认的比较方式,也就是比较两个对象间的地址值.<br>    &#x2F;&#x2F;能不能按照对象间的属性值比较,如果两个对象的属性完全都一样,就让两个对象相等,让equals()返回true<br>    @Override<br>    public boolean equals(Object obj) &#123;<br>        &#x2F;&#x2F;不一样就返回false<br>        if (this &#x3D;&#x3D; obj)<br>            return true;<br>        if (obj &#x3D;&#x3D; null)<br>            return false;<br>        if (getClass() !&#x3D; obj.getClass())<br>            return false;<br>        &#x2F;&#x2F;目的就是拿着两个对象的属性值比较<br>        &#x2F;&#x2F;统一类型,如果参数是个学生类型,咱两比.不是同一类型的学生都没有可比性!!<br>        Student other &#x3D; (Student) obj;<br>        if (age !&#x3D; other.age)<br>            return false;<br>        if (name &#x3D;&#x3D; null) &#123;<br>            if (other.name !&#x3D; null)<br>                return false;<br>        &#125; else if (!name.equals(other.name))<br>            return false;<br>        &#x2F;&#x2F;如果属性一样,就返回true<br>        return true;<br>    &#125;<br>&#125;<br>测试结果：<br>20<br>jack<br>460141958<br>Student [name&#x3D;jack, age&#x3D;20]<br>Student [name&#x3D;jack, age&#x3D;20]<br>class cn.tedu.day16.Student<br>true<br></code></pre></td></tr></table></figure>
+<h2 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h2><p>与基本类型的对应关系</p>
+<table>
+<thead>
+<tr>
+<th align="left">基本类型</th>
+<th align="left">包装类型</th>
+<th align="left">父类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">int</td>
+<td align="left">Integer</td>
+<td align="left">java.long.Number</td>
+</tr>
+<tr>
+<td align="left">long</td>
+<td align="left">Long</td>
+<td align="left">java.long.Number</td>
+</tr>
+<tr>
+<td align="left">short</td>
+<td align="left">Short</td>
+<td align="left">java.long.Number</td>
+</tr>
+<tr>
+<td align="left">float</td>
+<td align="left">Float</td>
+<td align="left">java.long.Number</td>
+</tr>
+<tr>
+<td align="left">double</td>
+<td align="left">Double</td>
+<td align="left">java.long.Number</td>
+</tr>
+<tr>
+<td align="left">byte</td>
+<td align="left">Byte</td>
+<td align="left">java.long.Number</td>
+</tr>
+<tr>
+<td align="left">char</td>
+<td align="left">Character</td>
+<td align="left">java.long.Object</td>
+</tr>
+<tr>
+<td align="left">boolean</td>
+<td align="left">Boolean</td>
+<td align="left">java.long.Object</td>
+</tr>
+</tbody></table>
+<p>包装类是不可变类，在构造了包装类对象后，不允许改包装类在其中的值<br>包装类是final的，不能定义他们的子类<br>Number数字包装类的抽象父类。<br>子类：<br><img src="/2020/06/22/Api/image008.png" alt="子类"></p>
+<p>常用的方法：</p>
+<p>提供了各种获取值的方式，已经完成了强转。<br><img src="/2020/06/22/Api/image009.png" alt="method"></p>
+<h3 id="Integer"><a href="#Integer" class="headerlink" title="Integer"></a>Integer</h3><p>创建对象<br><code>new Integer(5)</code>;新建对象<br><code>Integer.valueOf(5);</code><br>在<code>Integer</code>类中，包含256个<code>Integer</code>缓存对象，范围是 -128到127。<br>使用<code>valueOf()</code>时，如果指定范围内的值，访问缓存对象，而不新建；如果指定范围外的值，直接新建对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs plain">Integer a &#x3D; new Integer(5);&#x2F;&#x2F;创建对象<br>Integer b &#x3D; Integer.valueOf(5);&#x2F;&#x2F;读取缓存<br>Integer c &#x3D; Integer.valueOf(5);&#x2F;&#x2F;读取缓存<br>System.out.println(b&#x3D;&#x3D;c);&#x2F;&#x2F;true<br>System.out.println(a&#x3D;&#x3D;b);&#x2F;&#x2F;false<br>System.out.println(a.equals(b));&#x2F;&#x2F;true<br></code></pre></td></tr></table></figure>
+
+<p>方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs plain">parseInt();字符串转换成int<br>toBinaryString();把整数转换成2进制数据<br>toOctalString();把整数转换成8进制数据<br>toHexString();把整数转换成16进制数据<br></code></pre></td></tr></table></figure>
+
+<h3 id="Double"><a href="#Double" class="headerlink" title="Double"></a>Double</h3><p>创建对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">new Double(3.14)<br>Double.valueOf(3.14)&#x2F;&#x2F;和 new 没有区别<br></code></pre></td></tr></table></figure>
+
+<p>方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">Double.parseDouble();<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="String练习"><a href="#String练习" class="headerlink" title="String练习"></a>String练习</h2><ol>
+<li>源码摘抄:</li>
+</ol>
+<ul>
+<li>–String是最终的类,不能被继承<br><code>public final class String</code>  </li>
+<li>–String底层维护一个char[],数组长度不能改.而且是final的,数组的值也不能被修改.— 也就是说字符串是个常量,一旦定义不能修改.<br><code>private final char value[];</code></li>
+</ul>
+<ol start="2">
+<li>创建对象<br><code>String(char[] value)</code><br>分配一个新的 String，使其表示字符数组参数中当前包含的字符序列。</li>
+<li>常用方法</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs plain">char charAt(int index) <br>          	返回指定索引处的 char 值。 <br>String concat(String str) <br>		          将指定字符串连接到此字符串的结尾。 <br>boolean contains(CharSequence s) <br>		          当且仅当此字符串包含指定的 char 值序列时，返回 true。 <br>boolean endsWith(String suffix) <br>		          测试此字符串是否以指定的后缀结束。 <br>boolean equals(Object anObject) <br>		          将此字符串与指定的对象比较。 <br>byte[] getBytes() <br>int indexOf(String str) <br>		 			返回指定子字符串在此字符串中第一次出现处的索引。<br>int lastIndexOf(String str) <br>		          返回指定子字符串在此字符串中最右边出现处的索引。 <br>boolean isEmpty() <br>		          当且仅当 length() 为 0 时返回 true。 <br>int length() <br>		          返回此字符串的长度。<br>String replace(char oldChar, char newChar) <br>		          返回一个新的字符串，它是通过用 newChar 替换此字符串中出现的所有 oldChar 得到的。 <br>String[] split(String regex) <br>		          根据给定正则表达式的匹配拆分此字符串。 <br>boolean startsWith(String prefix) <br>		          测试此字符串是否以指定的前缀开始。 <br>String substring(int beginIndex) <br>		          返回一个新的字符串，它是此字符串的一个子字符串。 <br>String substring(int beginIndex, int endIndex) <br>		          返回一个新字符串，它是此字符串的一个子字符串。 <br>char[] toCharArray() <br>		          将此字符串转换为一个新的字符数组。 <br>String toLowerCase() <br>		          使用默认语言环境的规则将此 String 中的所有字符都转换为小写。 <br>String toUpperCase() <br>		          使用默认语言环境的规则将此 String 中的所有字符都转换为大写。 <br>String trim() <br>		          返回字符串的副本，忽略前导空白和尾部空白。<br>static String valueOf(int i) <br>		          返回 int 参数的字符串表示形式。<br></code></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>练习</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><code class="hljs plain">    public static void main(String[] args) &#123;<br>        &#x2F;&#x2F;1, 字符串底层维护了一个char[]  , 而且是final的,也就是数组长度不能改,数组里的值也不能改,----字符串是一个常量 !!<br>        char[] c &#x3D; new char[]&#123;&#39;a&#39;, &#39;b&#39;, &#39;c&#39;&#125;;<br>        String s &#x3D; new String(c);  &#x2F;&#x2F;  触发char[]类型的含参构造--存在了堆内存中<br><br>        String str &#x3D; &quot;abc&quot;;  &#x2F;&#x2F;  直接赋值,存在堆内存中的常量池中--高效--因为常量池的相同数据,只会存一次<br>        String str2 &#x3D; &quot;abc&quot;;<br>        System.out.println(str2 &#x3D;&#x3D; str);&#x2F;&#x2F;true, 相同数据,拥有相同的存储空间,内存中就是相同的地址值<br>        System.out.println(s &#x3D;&#x3D; str);&#x2F;&#x2F;false, 在堆里的地址值,str在常量池的地址值,不相同<br><br>        &#x2F;&#x2F;2,常用方法<br>        System.out.println(s.charAt(1)); &#x2F;&#x2F; 根据下标获取对应的字符<br>        System.out.println(s.concat(&quot;123&quot;));&#x2F;&#x2F;在字符串的末尾处拼接自定字符串<br>        System.out.println(s.contains(&quot;bc&quot;));&#x2F;&#x2F;判断是否包含指定的字符串<br>        System.out.println(s.endsWith(&quot;c&quot;));&#x2F;&#x2F;判断字符串 是否以指定后缀 结尾<br>        System.out.println(s.equals(&quot;abc&quot;));&#x2F;&#x2F;判断字符是 是否 与指定的字符串  相等<br>        System.out.println(s.indexOf(&quot;a&quot;));&#x2F;&#x2F;获取指定字符串在s出现的第一次的下标值<br><br>        s &#x3D; &quot;abca&quot;;<br>        System.out.println(s.lastIndexOf(&quot;a&quot;));&#x2F;&#x2F;获取指定字符串在s出现的最后一次的下标值<br>        System.out.println(s.isEmpty());&#x2F;&#x2F;判断字符串是否为空<br>        System.out.println(s.length());&#x2F;&#x2F;获取字符串的长度<br>        System.out.println(s.replace(&#39;a&#39;, &#39;0&#39;));&#x2F;&#x2F;把旧字符用新字符替换 , 0bc0<br>        System.out.println(s.startsWith(&quot;ab&quot;));&#x2F;&#x2F;判断是否以指定字符串开始<br>        System.out.println(s.substring(1));&#x2F;&#x2F;从指定下标处开始,截取所有字符串<br>        System.out.println(s.substring(0, 2));&#x2F;&#x2F;从指定下标开始,到指定下标结束,截取中间段[0,2)--含头不含尾<br>        System.out.println(s.toLowerCase());&#x2F;&#x2F;自动转成小写<br>        System.out.println(s.toUpperCase());&#x2F;&#x2F;自动转成大写<br><br>        s &#x3D; &quot;   ab  ca    &quot;;<br>        System.out.println(s.trim());&#x2F;&#x2F;去除前导空格和后面空格<br><br>        String num &#x3D; String.valueOf(123);&#x2F;&#x2F;用来把各种类型的数据  转成 String类型<br>        System.out.println(num + 1);&#x2F;&#x2F;1231<br><br>        System.out.println(&quot;------字符串转数组------&quot;);<br>        byte[] bs &#x3D; s.getBytes();&#x2F;&#x2F;把字符串的数据放入byte[]里<br>        System.out.println(Arrays.toString(bs));<br><br>        char[] cs &#x3D; s.toCharArray(); &#x2F;&#x2F;把字符串的数据放入char[]里<br>        System.out.println(Arrays.toString(cs));<br><br>        s &#x3D; &quot;a0b0c0&quot;;<br>        String[] ss &#x3D; s.split(&quot;0&quot;);&#x2F;&#x2F;按照指定的规则切割字符串<br>        System.out.println(Arrays.toString(ss));&#x2F;&#x2F;[a, b, c]<br><br>    &#125;<br><br>测试结果：<br>true<br>false<br>b<br>abc123<br>true<br>true<br>true<br>0<br>3<br>false<br>4<br>0bc0<br>true<br>bca<br>ab<br>abca<br>ABCA<br>ab  ca<br>1231<br>------字符串转数组------<br>[32, 32, 32, 97, 98, 32, 32, 99, 97, 32, 32, 32, 32]<br>[ ,  ,  , a, b,  ,  , c, a,  ,  ,  ,  ]<br>[a, b, c]<br><br>Process finished with exit code 0<br></code></pre></td></tr></table></figure>
+<h2 id="StringBuilder-StringBuffer"><a href="#StringBuilder-StringBuffer" class="headerlink" title="StringBuilder/StringBuffer"></a>StringBuilder/StringBuffer</h2><ol>
+<li>源码摘抄:</li>
+</ol>
+<ul>
+<li>是<code>final</code>的类,不可以被继承<br><code>public final class StringBuilder</code></li>
+<li>底层仍然像String一样,维护了一个char[] ,只不过值可以随时被修改<br><code>char[] value;</code></li>
+</ul>
+<ol start="2">
+<li>这两个工具类,专门用来优化  字符串的拼接 操作</li>
+<li>创建对象<br><code>StringBuilder()</code><br>构造一个不带任何字符的字符串生成器，其初始容量为 16 个字符。</li>
+<li>常用方法<br><code>StringBuilder append(String str)</code><br>将指定的字符串追加到此字符序列。</li>
+<li>练习 </li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test_StringBuffer</span> </span>&#123;<br>    <span class="hljs-comment">//测试 字符串拼接优化的工具类  StringBuilder /StringBuffer</span><br>    <span class="hljs-comment">//总结:</span><br>    <span class="hljs-comment">//1, String通过+拼接字符串效率低,但是就两三次无所谓</span><br>    <span class="hljs-comment">//2, 如果有大量的字符串拼接需求,建议使用工具类 StringBuilder /StringBuffer</span><br>    <span class="hljs-comment">//3, StringBuilder /StringBuffer 都是用来在原有数据基础上  追加指定的拼接内容 , 拼接内容的数据类型非常丰富</span><br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        <span class="hljs-comment">//		method();//先用普通方式+拼接字符串</span><br>        method2();<span class="hljs-comment">//使用工具类优化拼接效率</span><br>    &#125;<br><br>    <span class="hljs-comment">//将指定的字符串拼接10000次</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method2</span><span class="hljs-params">()</span> </span>&#123;<br>        String s = <span class="hljs-string">"abcdefghijkmnopqrstuvwxyz"</span>;<br><br>        <span class="hljs-comment">//1,创建工具类对象</span><br>        StringBuffer sb = <span class="hljs-keyword">new</span> StringBuffer();<br>        <span class="hljs-comment">//		StringBuilder sb = new StringBuilder();</span><br><br>        <span class="hljs-keyword">long</span> start = System.currentTimeMillis();<span class="hljs-comment">//获取系统时间,计时开始</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10000</span>; i++) &#123;<br>            sb.append(s); <span class="hljs-comment">//2, 工具 拼接字符串</span><br>        &#125;<br>        <span class="hljs-keyword">long</span> end = System.currentTimeMillis();<span class="hljs-comment">//计时结束</span><br><br>        System.out.println(end - start);<span class="hljs-comment">//时间差 1ms</span><br><br>    &#125;<br><br>    <span class="hljs-comment">//将指定的字符串拼接10000次</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method</span><span class="hljs-params">()</span> </span>&#123;<br>        String s = <span class="hljs-string">"abcdefghijkmnopqrstuvwxyz"</span>;<br>        String res = <span class="hljs-string">""</span>;<span class="hljs-comment">//定义变量,记录拼接的结果</span><br><br>        <span class="hljs-keyword">long</span> start = System.currentTimeMillis();<span class="hljs-comment">//获取系统时间,计时开始</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10000</span>; i++) &#123;<br>            res = res + s; <span class="hljs-comment">//+ 拼接字符串</span><br>        &#125;<br>        <span class="hljs-keyword">long</span> end = System.currentTimeMillis();<span class="hljs-comment">//计时结束</span><br><br>        System.out.println(end - start);<span class="hljs-comment">//时间差 2149ms</span><br>    &#125;<br>&#125;<br><br>测试结果<br>method用时很长<br>method使用了StringBuffer进行拼接，速度非常快<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h2><h3 id="日期工具SimpleDateFormat"><a href="#日期工具SimpleDateFormat" class="headerlink" title="日期工具SimpleDateFormat"></a>日期工具SimpleDateFormat</h3><ol>
+<li>SimpleDateFormat 是一个以与语言环境有关的方式来格式化和解析日期的具体类。它允许进行格式化（日期 -&gt;     文本）、解析（文本 -&gt; 日期）和规范化。 SimpleDateFormat 使得可以选择任何用户定义的日期-时间格式的    模式。</li>
+<li>创建对象<br><code>SimpleDateFormat(String pattern)</code><br>用给定的模式和默认语言环境的日期格式符号构造 SimpleDateFormat。</li>
+<li>常用方法<br><code>String format(Date date)</code>把Date类型的日期格式化成文本类型<br><code>Date parse(String text )</code>解析字符串的文本，生成 Date</li>
+<li>练习</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> ParseException, ParseException </span>&#123;<br><span class="hljs-comment">//生存XX天</span><br>        String birth = <span class="hljs-keyword">new</span> Scanner(System.in).nextLine();<span class="hljs-comment">//接收用户输入的字符串</span><br>        SimpleDateFormat s = <span class="hljs-keyword">new</span> SimpleDateFormat(<span class="hljs-string">"yyyy-MM-dd"</span>);<span class="hljs-comment">//创建SimpleDateFormat类型的对象使用有参构造，年月日</span><br>        Date date = s.parse(birth);<span class="hljs-comment">//把字符串类型的日期  转成  Date类型 y表示年 M表示月 d表示日</span><br>        <span class="hljs-keyword">long</span> birthday = date.getTime();<span class="hljs-comment">//获取到出生日期对应的毫秒值</span><br>        <span class="hljs-keyword">long</span> now = System.currentTimeMillis();<span class="hljs-comment">//获取当前的系统时间的毫秒值</span><br>        System.out.println((now - birthday) / <span class="hljs-number">1000</span> / <span class="hljs-number">60</span> / <span class="hljs-number">60</span> / <span class="hljs-number">24</span>);<span class="hljs-comment">//计算存活天数  ms-&gt;天</span><br>    &#125;<br>测试结果：<br><span class="hljs-number">1992</span>-<span class="hljs-number">10</span>-<span class="hljs-number">10</span><br><span class="hljs-number">10118</span><br></code></pre></td></tr></table></figure>
+
+<p>BigDecimal/BigInteger</p>
+<ol>
+<li>BigDecimal常用来做浮点数运算不精确的解决方案.可以把以前的+-*/的运算,<br>优化成两个对象间的运算</li>
+<li>创建对象<br><code>BigDecimal(double val)</code> – 有坑,别用<br><code>BigDecimal(String val)</code> – 建议使用这个</li>
+<li>常用方法<br>加法运算–<code>BigDecimal add(BigDecimal augend)</code><br>减法运算–<code>BigDecimal subtract(BigDecimal subtrahend)</code><br>乘法运算–<code>BigDecimal multiply(BigDecimal multiplicand)</code><br>除法运算–<code>BigDecimal divide(BigDecimal divisor)</code><br><code>BigDecimal divide(BigDecimal divisor, int scale, int roundingMode)</code>除不尽的时候使用 </li>
+<li>练习</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>    method();<span class="hljs-comment">//暴露精确问题</span><br>    method2();<span class="hljs-comment">//BigDecimal解决精确问题</span><br>&#125;<br>    <span class="hljs-comment">//暴露精确问题</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-comment">//1, 接收用户输入的两个小数</span><br>    <span class="hljs-keyword">double</span> a = <span class="hljs-keyword">new</span> Scanner(System.in).nextDouble();<br>    <span class="hljs-keyword">double</span> b = <span class="hljs-keyword">new</span> Scanner(System.in).nextDouble();<br><br>    <span class="hljs-comment">//2, 做运算</span><br>    System.out.println(a + b);<span class="hljs-comment">//不精确</span><br>    System.out.println(a - b);<span class="hljs-comment">//不精确</span><br>    System.out.println(a * b);<span class="hljs-comment">//不精确</span><br>    System.out.println(a / b);<span class="hljs-comment">//不精确</span><br>&#125;<br><br><br><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">method2</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">double</span> a = <span class="hljs-keyword">new</span> Scanner(System.in).nextDouble();<br>    <span class="hljs-keyword">double</span> b = <span class="hljs-keyword">new</span> Scanner(System.in).nextDouble();<br><br>    <span class="hljs-comment">//1, 创建对象</span><br>    BigDecimal bd1 = <span class="hljs-keyword">new</span> BigDecimal(a + <span class="hljs-string">""</span>);<br>    BigDecimal bd2 = <span class="hljs-keyword">new</span> BigDecimal(b + <span class="hljs-string">""</span>);<br><br>    <span class="hljs-comment">//2, 优化运算过程</span><br>    BigDecimal bd3;<br><br>    bd3 = bd1.add(bd2);<span class="hljs-comment">//加法运算add</span><br>    System.out.println(bd3);<br><br>    bd3 = bd1.subtract(bd2);<span class="hljs-comment">//减法运算subtract</span><br>    System.out.println(bd3);<br><br>    bd3 = bd1.multiply(bd2);<span class="hljs-comment">//乘法运算multiply</span><br>    System.out.println(bd3);<br><br>    <span class="hljs-comment">//		bd3 = bd1.divide(bd2) ;//除法运算divide,除不尽会抛出异常java.lang.ArithmeticException:</span><br>    <span class="hljs-comment">//第二个参数是保留的小数位数,第三个参数是舍入模式:四舍五入</span><br>    bd3 = bd1.divide(bd2, <span class="hljs-number">5</span>, BigDecimal.ROUND_HALF_UP);<br>    System.out.println(bd3);<br><br>&#125;<br><br>测试结果：<br><span class="hljs-comment">//method</span><br><span class="hljs-number">12.12</span><span class="hljs-comment">//输入double类型的小数</span><br><span class="hljs-number">21.21</span><span class="hljs-comment">//输入double类型的小数</span><br><span class="hljs-number">33.33</span><span class="hljs-comment">//加不精确</span><br>-<span class="hljs-number">9.090000000000002</span><span class="hljs-comment">//减不精确</span><br><span class="hljs-number">257.0652</span><span class="hljs-comment">//乘不精确</span><br><span class="hljs-number">0.5714285714285714</span><span class="hljs-comment">//乘除不精确</span><br><span class="hljs-comment">//method2</span><br><span class="hljs-number">12.12</span><span class="hljs-comment">//输入double类型的小数</span><br><span class="hljs-number">21.21</span><span class="hljs-comment">//输入double类型的小数</span><br><span class="hljs-number">33.33</span><span class="hljs-comment">//加</span><br>-<span class="hljs-number">9.09</span><span class="hljs-comment">//减</span><br><span class="hljs-number">257.0652</span><span class="hljs-comment">//乘</span><br><span class="hljs-number">0.57143</span><span class="hljs-comment">//乘保留小数点后5位四舍五入</span><br></code></pre></td></tr></table></figure>
+
+
+
+
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
 	
 
@@ -768,7 +375,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">mind</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Api</a>
         		</li>
       		
 		</ul>
@@ -780,7 +391,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/mind//" class="article-tag-list-link color5">mind</a>
+        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/java/mind//" class="article-tag-list-link color5">mind</a>
         		</li>
       		
 		</ul>
@@ -798,18 +413,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/06/22/Statistic/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/06/23/Reflect/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Hexo添加访问统计
+          Java Class 反射
         
       </div>
     </a>
   
   
-    <a href="/2020/06/22/hexo/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hexo个人blog搭建教程</div>
+    <a href="/2020/06/22/Statistic/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo添加访问统计</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -836,7 +451,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java面向对象"><span class="toc-number">1.</span> <span class="toc-text">Java面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java类及类的成员"><span class="toc-number">1.1.</span> <span class="toc-text">Java类及类的成员</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#类和对象"><span class="toc-number">1.1.1.</span> <span class="toc-text">类和对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类的成员"><span class="toc-number">1.1.2.</span> <span class="toc-text">类的成员</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#面向对象的三大特征"><span class="toc-number">1.2.</span> <span class="toc-text">面向对象的三大特征</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#封装性"><span class="toc-number">1.2.1.</span> <span class="toc-text">封装性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#继承性"><span class="toc-number">1.2.2.</span> <span class="toc-text">继承性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多态性"><span class="toc-number">1.2.3.</span> <span class="toc-text">多态性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一些关键字"><span class="toc-number">1.3.</span> <span class="toc-text">一些关键字</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#return"><span class="toc-number">1.3.1.</span> <span class="toc-text">return</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#this"><span class="toc-number">1.3.2.</span> <span class="toc-text">this</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#package"><span class="toc-number">1.3.3.</span> <span class="toc-text">package</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#import"><span class="toc-number">1.3.4.</span> <span class="toc-text">import</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#super"><span class="toc-number">1.3.5.</span> <span class="toc-text">super</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#static"><span class="toc-number">1.3.6.</span> <span class="toc-text">static</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#final"><span class="toc-number">1.3.7.</span> <span class="toc-text">final</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#abstract"><span class="toc-number">1.3.8.</span> <span class="toc-text">abstract</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#interface"><span class="toc-number">1.3.9.</span> <span class="toc-text">interface</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object类"><span class="toc-number">1.4.</span> <span class="toc-text">Object类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Object类是所有类的根父类"><span class="toc-number">1.4.1.</span> <span class="toc-text">Object类是所有类的根父类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如果在类的声明中未使用extends关键字指明其父类，则默认父类为java-lang-Object类"><span class="toc-number">1.4.2.</span> <span class="toc-text">如果在类的声明中未使用extends关键字指明其父类，则默认父类为java.lang.Object类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Object类中的功能（属性、方法）具有通用性"><span class="toc-number">1.4.3.</span> <span class="toc-text">Object类中的功能（属性、方法）具有通用性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Object类中只声明了一个空参的构造器"><span class="toc-number">1.4.4.</span> <span class="toc-text">Object类中只声明了一个空参的构造器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包装类的使用"><span class="toc-number">1.5.</span> <span class="toc-text">包装类的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#为了使基本数据类型的变量具有类的特征，引入包装类"><span class="toc-number">1.5.1.</span> <span class="toc-text">为了使基本数据类型的变量具有类的特征，引入包装类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#包装类和基本数据类型对应"><span class="toc-number">1.5.2.</span> <span class="toc-text">包装类和基本数据类型对应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本数据类型、包装类、String三者转换"><span class="toc-number">1.5.3.</span> <span class="toc-text">基本数据类型、包装类、String三者转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用场景"><span class="toc-number">1.5.4.</span> <span class="toc-text">应用场景</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#接口"><span class="toc-number">1.6.</span> <span class="toc-text">接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用interface关键字定义"><span class="toc-number">1.6.1.</span> <span class="toc-text">使用interface关键字定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用说明"><span class="toc-number">1.6.2.</span> <span class="toc-text">使用说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#体会"><span class="toc-number">1.6.3.</span> <span class="toc-text">体会</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#举例"><span class="toc-number">1.6.4.</span> <span class="toc-text">举例</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-API-基础1"><span class="toc-number">1.</span> <span class="toc-text">Java API 基础1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#本文中包含API相关思维导图和课堂笔记整理"><span class="toc-number">1.1.</span> <span class="toc-text">本文中包含API相关思维导图和课堂笔记整理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#API思维导图"><span class="toc-number"></span> <span class="toc-text">API思维导图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object"><span class="toc-number">1.</span> <span class="toc-text">Object</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#包装类"><span class="toc-number">2.</span> <span class="toc-text">包装类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Integer"><span class="toc-number">2.1.</span> <span class="toc-text">Integer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Double"><span class="toc-number">2.2.</span> <span class="toc-text">Double</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String练习"><span class="toc-number">3.</span> <span class="toc-text">String练习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#StringBuilder-StringBuffer"><span class="toc-number">4.</span> <span class="toc-text">StringBuilder&#x2F;StringBuffer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Date"><span class="toc-number">5.</span> <span class="toc-text">Date</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#日期工具SimpleDateFormat"><span class="toc-number">5.1.</span> <span class="toc-text">日期工具SimpleDateFormat</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
